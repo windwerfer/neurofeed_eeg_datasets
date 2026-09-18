@@ -12,3 +12,11 @@ Local source tree: `/workspace/muse-eeg-heads/datasets/`
 | `muse4_engagement_a_eng` | `engagement_a_eng` | `/workspace/muse-eeg-heads/datasets/engagement_a_eng/windows/` | Muse4 proxy, `(N,4,512)` | 133-person research corpus; not a shipping head |
 
 The local paths are source-repository pointers, not paths that should be embedded in the final hosted dataset. Export manifests should replace them with portable relative paths and source IDs.
+
+## Reconciled subject counts (2026-09-18)
+
+- vigilance_sleep_edf: 124 subjects / 125 window nights; splits 86/19/19
+- attention_ds001787 (+crown8): 16 subjects; splits 12/2/2
+- attention_ds003969 (+crown8): 64 subjects; splits 60/2/2 (expanded; frozen holdouts kept)
+- engagement_a_eng: 150 packs / ~133 unique persons via `splits.json`
+- Older docs citing 11 attention subjects for ds003969 or 12 for ds001787 are superseded by `splits/`.

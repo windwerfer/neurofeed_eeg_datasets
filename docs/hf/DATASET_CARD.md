@@ -10,6 +10,8 @@ These are derived windows and labels, not a replacement for the original source 
 
 ## Configurations
 
+**Subject counts (reconciled 2026-09-18):** `vigilance_sleep_edf` 124 subjects (86/19/19); `attention_ds001787` (+crown8) 16 subjects (12/2/2); `attention_ds003969` (+crown8) **64** subjects (60/2/2) — expanded beyond the older 11-subject status writeup; frozen val/test holdouts unchanged. See [`splits/README.md`](../../splits/README.md).
+
 | Config | Montage / shape | Sources and intended use | Status |
 |---|---|---|---|
 | `muse4_vigilance_sleep_edf` | Muse4, `(N,4,512)` | Sleep-EDF Expanded + HMC; vigilance and Head C stage fields | primary release candidate |
