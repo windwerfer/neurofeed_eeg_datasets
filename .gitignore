@@ -1,0 +1,21 @@
+# large / binary EEG
+*.npz
+*.edf
+*.bdf
+*.fif
+*.pt
+*.pth
+*.bin
+*.f32bin
+*.h5
+*.hdf5
+*.parquet
+*.arrow
+*.zarr
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+.env
+*.egg-info/
+.DS_Store
