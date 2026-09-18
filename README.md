@@ -10,7 +10,7 @@ This repo holds **schemas, fixed subject splits, attribution, dataset cards, and
 |-------|--------|
 | Dataset card, ATTRIBUTION, publish plan | [`docs/hf/`](docs/hf/) |
 | Window schema / montages / label maps | [`schemas/`](schemas/) (synced from training lab) |
-| Fixed subject splits (JSON) | forthcoming under `splits/` |
+| Fixed subject splits (JSON) | [`splits/`](splits/) |
 | Derived window NPZs | **Hugging Face** (configs; not in this git tree) |
 | Training experiments | `muse-eeg-heads` (private/lab) |
 | App head packs | [`neurofeed_heads`](https://github.com/windwerfer/neurofeed_heads) |
