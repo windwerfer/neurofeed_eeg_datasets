@@ -14,7 +14,7 @@ This repo holds **schemas, fixed subject splits, attribution, dataset cards, and
 | Derived window NPZs | **Hugging Face** [`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows) (license other; configs `muse4_*`, `crown8_*`) |
 | App head packs | [`neurofeed_heads`](https://github.com/windwerfer/neurofeed_heads) |
 | Feedback gym (in progress) | [`neurofeed/feedback_gym`](https://github.com/windwerfer/neurofeed/tree/main/feedback_gym) |
-| Training experiments | `muse-eeg-heads` (local/unpublished; a future public train-lab repo is under discussion) |
+| Training experiments | [`neurofeed_train`](https://github.com/windwerfer/neurofeed_train) (public train/eval lab) |
 | Private GPU scratch | Kaggle `muse-eeg-heads-windows` / `muse-eeg-heads-cache` / src / aeng — **private training only**; **never publish cache**; not a public redistribution path |
 
 ## Hugging Face dataset
