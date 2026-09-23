@@ -20,6 +20,8 @@ These are derived windows and labels, not a replacement for the original source 
 | `crown8_attention_ds001787` | Crown8, `(N,8,512)` | Crown8 re-parse of ds001787 | research only; `ship_candidate: false` |
 | `crown8_attention_ds003969` | Crown8, `(N,8,512)` | Crown8 re-parse of ds003969 | research only; `ship_candidate: false` |
 | `muse4_engagement_a_eng` | Muse4 proxy, `(N,4,512)` | Open-license derived low/high engagement windows | research only; not a shipping head |
+| `crown2_vigilance_hmc` | Crown2, `(N,2,512)` C3/C4 | HMC-only vig; true centrals | **ship_candidate** Crown vig proxy (test macro-F1 0.670 CBraMod) |
+| `crown4_vigilance_hmc` | Crown4 HMC proxy, `(N,4,512)` C3/C4/F6/PO4 | HMC-only; F6≈F4, PO4≈O2 | **ship_candidate** Crown vig proxy (test macro-F1 0.680 CBraMod) |
 
 Sleep-EDF and HMC are not native Muse recordings: they use a documented **Muse4 proxy** mapping. Attention corpora are also source-device data remapped to a Muse-like four-channel layout. Crown8 is a separate montage with channels `CP3, C3, F5, PO3, PO4, F6, C4, CP4` in stream order.
 
@@ -30,6 +32,8 @@ Sleep-EDF and HMC are not native Muse recordings: they use a documented **Muse4 
 - Sleep-EDF/HMC are useful transfer data for vigilance, but their Muse4 geometry is a proxy, not native Muse hardware.
 - Labels encode source-specific protocols, not a universal clinical or psychological state. Do not infer diagnosis, attention ability, or sleep disorder from them.
 - Do not mix Muse4 and Crown8 examples in one training example or silently treat proxy channels as native channels.
+- Crown HMC vig configs are **HMC-only** (not Sleep-EDF). Crown4 uses honest approximations F6≈F4 and PO4≈O2. Do not mix with `muse4_vigilance_sleep_edf`.
+- Crown **attention** remains research-only; Crown **vig** HMC proxy is the first shippable Crown path.
 - Check the per-config manifests for preprocessing, units, source IDs, subject splits, and checksums before training.
 
 ## Not included

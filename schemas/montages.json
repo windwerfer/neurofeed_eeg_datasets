@@ -114,6 +114,43 @@
     "never_mix_muse_crown_in_one_example": true,
     "reve_train_hz": 200,
     "reve_positions": "huggingface.co/brain-bzh/reve-positions",
-    "reve_weights_gated": "brain-bzh/reve-base"
+    "reve_weights_gated": "brain-bzh/reve-base",
+    "never_mix_crown_vig_with_muse4_vig": true
+  },
+  "crown2_strong": {
+    "device": "Neurosity Crown (central pair) / HMC PSG proxy",
+    "sample_rate_hz": 256,
+    "units": "uV",
+    "stream_order": [
+      "C3",
+      "C4"
+    ],
+    "hmc_source_labels": [
+      "EEG C3-M2",
+      "EEG C4-M1"
+    ],
+    "notes": "True centrals from HMC; no fabricated channels. HF config crown2_vigilance_hmc."
+  },
+  "crown4_hmc": {
+    "device": "Neurosity Crown 4-ch HMC proxy (not full Crown8)",
+    "sample_rate_hz": 256,
+    "units": "uV",
+    "stream_order": [
+      "C3",
+      "C4",
+      "F6",
+      "PO4"
+    ],
+    "hmc_source_labels": [
+      "EEG C3-M2",
+      "EEG C4-M1",
+      "EEG F4-M1",
+      "EEG O2-M1"
+    ],
+    "approx": {
+      "F6": "EEG F4-M1",
+      "PO4": "EEG O2-M1"
+    },
+    "notes": "Honest approximation F6\u2248F4, PO4\u2248O2. Not Muse4 and not full Crown8. HF config crown4_vigilance_hmc."
   }
 }

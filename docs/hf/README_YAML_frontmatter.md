@@ -30,6 +30,8 @@ configs:
   - config_name: crown8_attention_ds001787
   - config_name: crown8_attention_ds003969
   - config_name: muse4_engagement_a_eng
+  - config_name: crown2_vigilance_hmc
+  - config_name: crown4_vigilance_hmc
 ---
 ```
 

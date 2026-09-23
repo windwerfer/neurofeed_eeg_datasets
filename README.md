@@ -11,7 +11,7 @@ This repo holds **schemas, fixed subject splits, attribution, dataset cards, and
 | Dataset card, ATTRIBUTION, publish plan | [`docs/hf/`](docs/hf/) |
 | Window schema / montages / label maps | [`schemas/`](schemas/) (synced from training lab) |
 | Fixed subject splits (JSON) | [`splits/`](splits/) |
-| Derived window NPZs | **Hugging Face** [`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows) (license other; configs `muse4_*`, `crown8_*`) |
+| Derived window NPZs | **Hugging Face** [`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows) (license other; configs `muse4_*`, `crown8_*`, `crown2_vigilance_hmc`, `crown4_vigilance_hmc`) |
 | App head packs | [`neurofeed_heads`](https://github.com/windwerfer/neurofeed_heads) |
 | Feedback gym (in progress) | [`neurofeed/feedback_gym`](https://github.com/windwerfer/neurofeed/tree/main/feedback_gym) |
 | Training experiments | [`neurofeed_train`](https://github.com/windwerfer/neurofeed_train) (public train/eval lab) |
@@ -23,8 +23,9 @@ Name: [`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windw
 
 Configs (derived windows only; no raw PhysioNet EDF dump):
 
-- `muse4_vigilance_sleep_edf` — primary (Sleep-EDF + HMC, Muse4 proxy)
-- `muse4_attention_*` / `crown8_attention_*` — research; `ship_candidate: false` (Crown attention LOSO ~chance; no shippable Crown packs in neurofeed_heads yet)
+- `muse4_vigilance_sleep_edf` — primary Muse path (Sleep-EDF + HMC, Muse4 proxy)
+- `crown2_vigilance_hmc` / `crown4_vigilance_hmc` — **Crown vig ship proxy** (HMC-only CC-BY-4.0; C3/C4 and C3/C4/F6/PO4 with F6≈F4, PO4≈O2; do not mix with muse4)
+- `muse4_attention_*` / `crown8_attention_*` — research; `ship_candidate: false` (Crown **attention** still not shippable)
 - `muse4_engagement_a_eng` — research; mixed open licenses
 
 ## Never publish here or on HF

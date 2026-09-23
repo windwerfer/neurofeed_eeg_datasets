@@ -7,6 +7,8 @@ Live counts reconciled 2026-09-18 against on-disk window packs (not the older `a
 | Corpus | Subjects in catalog | train / val / test | Windows on disk | Notes |
 |--------|--------------------:|--------------------|----------------:|-------|
 | `vigilance_sleep_edf` | 124 | 86 / 19 / 19 | 125 nights | Sleep-EDF + HMC; Muse4 proxy |
+| `vigilance_hmc_crown2` | 151 | 106 / 23 / 22 | 151 packs | HMC-only Crown2 C3/C4; HF `crown2_vigilance_hmc`; **ship_candidate** Crown vig |
+| `vigilance_hmc_crown4` | 151 | 106 / 23 / 22 | 151 packs | HMC-only Crown4 proxy C3/C4/F6/PO4 (F6≈F4, PO4≈O2); HF `crown4_vigilance_hmc`; **ship_candidate** Crown vig |
 | `attention_ds001787` | 16 | 12 / 2 / 2 | 16 packs | OpenNeuro CC0; frozen val=`sub-006,015` test=`sub-019,013` |
 | `attention_ds001787_crown8` | 16 | 12 / 2 / 2 | 16 packs | Same subject splits as muse4 sibling |
 | `attention_ds003969` | 64 | 60 / 2 / 2 | 64 packs | Expanded past v0 “11 subjects”; frozen val=`sub-026,028` test=`sub-025,027` |
@@ -16,3 +18,5 @@ Live counts reconciled 2026-09-18 against on-disk window packs (not the older `a
 **Attention:** still `ship_candidate: false` (honest holdouts historically near chance). Larger N does not by itself make a public head.
 
 Validate in the lab with `python scripts/dataset/validate_splits.py` before treating a revision as frozen for Hugging Face.
+
+**Crown HMC vig:** HMC-only (not Sleep-EDF). Proxy montage caveats apply. Never mix with muse4 / crown8 attention packs.
