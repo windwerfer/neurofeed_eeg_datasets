@@ -34,3 +34,9 @@ Raw private caches, L-FAME (BY-NC), gated REVE base weights, LUNA, unresolved-li
 ## Status
 
 Public release on Hugging Face: [`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows). Schemas/splits/docs live in this GitHub repo; app packs in [`neurofeed_heads`](https://github.com/windwerfer/neurofeed_heads).
+
+
+## License
+
+- **Packaging / docs / scripts in this repo** (schemas, fixed subject splits, attribution docs, prep/upload scripts authored here): **[Apache-2.0](LICENSE)** — see [`LICENSE`](LICENSE).
+- **Derived window NPZs on Hugging Face** ([`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows)): remain **other** / under their **source corpus licenses**. This Apache grant does **not** re-license those materials or change the HF SPDX/badge.
