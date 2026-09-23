@@ -4,8 +4,8 @@ The exact license metadata should be finalized after the export manifest and ups
 
 ```yaml
 ---
-pretty_name: Muse EEG Windows
-name: muse-eeg-windows
+pretty_name: Neurofeed EEG Windows
+name: windwerfer/neurofeed-eeg-windows
 license: other
 license_name: Multiple upstream licenses; see README and attribution documents
 license_link: docs/PUBLISH_PLAN.md

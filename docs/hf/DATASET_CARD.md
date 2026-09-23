@@ -1,6 +1,6 @@
-# `muse-eeg-windows`
+# `windwerfer/neurofeed-eeg-windows`
 
-Proposed Hugging Face dataset name: **`muse-eeg-windows`** (organization TBD).
+Hugging Face dataset: **[`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows)**.
 
 ## Purpose
 
@@ -47,7 +47,7 @@ After a dataset builder/config is published, the intended interface is:
 ```python
 from datasets import load_dataset
 
-ds = load_dataset("ORG/muse-eeg-windows", "muse4_vigilance_sleep_edf")
+ds = load_dataset("windwerfer/neurofeed-eeg-windows", "muse4_vigilance_sleep_edf")
 row = ds["train"][0]
 X = row["X"]       # one 4 x 512 float32 window (or 8 x 512 for Crown8)
 y = row["label"]

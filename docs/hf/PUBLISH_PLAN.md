@@ -1,4 +1,4 @@
-# Publish plan for `muse-eeg-windows`
+# Publish plan for `neurofeed-eeg-windows`
 
 ## Release order
 
