@@ -1,55 +1,65 @@
-# Windows NPZ + annotation schema
+# Window NPZ and manifest schema
 
-## Required NPZ keys (all corpora)
+Applies to every config of [`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows).
+One recording (night, session or subject pack) gives one `<stem>_windows.npz` plus one `<stem>_manifest.json` under
+`<config>/windows/`. Some configs also ship `<stem>_qc.npz` (light artifact-QC flags).
 
-| Key | Type / shape | Notes |
-|-----|----------------|-------|
-| `X` | `(N, 4, 512)` float32 | Muse order AF7, AF8, TP9, TP10 @ 256 Hz, 2 s |
-| `y` | `(N,)` int64 | Index into `label_names` (Head A labels present in file) |
-| `starts` | `(N,)` int64 | Window start sample within the exported slice/recording |
-| `label_names` | `(C,)` str | Head A class names for this file |
+## Required NPZ keys (all configs)
 
-Preferred alias for trainers: treat `y` as **`y_head_a`** (integer index). Annotation CSV uses the string form in column `y_head_a`.
+| Key | Shape / dtype | Notes |
+|-----|---------------|-------|
+| `X` | `(N, C, 512)` float32 | 2-s windows at 256 Hz. `C` and channel order come from the config's montage (table below) |
+| `y` | `(N,)` int64 | Index into `label_names` |
+| `starts` | `(N,)` int64 | Window start sample (256 Hz) within the exported slice or recording |
+| `label_names` | `(K,)` str | Class names for this file, in index order |
 
-## Required for Sleep-EDF / vigilance (Head C — do not drop)
+`C` per montage (see `montages.json`; never mix montages in one example or one model input):
 
-| Key | Type / shape | Notes |
-|-----|----------------|-------|
-| `stage_raw` | `(N,)` object/str | Hypnogram text, e.g. `Sleep stage W`, `Sleep stage 1`, … |
-| `stage_coarse` | `(N,)` object/str | `wake` \| `light` \| `deep` \| `rem` \| `unknown` |
+| Montage id | C | Channel order in `X` | Configs |
+|---|---:|---|---|
+| `muse4` (proxy) | 4 | `AF7, AF8, TP9, TP10` | `muse4_*` |
+| `crown2_strong` | 2 | `C3, C4` | `crown2_vigilance_hmc` |
+| `crown4_hmc` (proxy) | 4 | `C3, C4, F6, PO4` (F6≈F4, PO4≈O2) | `crown4_vigilance_hmc` |
+| `crown8` | 8 | `CP3, C3, F5, PO3, PO4, F6, C4, CP4` | `crown8_attention_*` |
 
-**Head A mapping (unchanged):** only `Sleep stage W` → `drowsy`, `Sleep stage 1` → `hypnagogic`. Other stages are excluded from Head A training windows in current n1-slice exports, but when present in fuller exports they still carry Head C fields.
+Muse4 model order (`AF7, AF8, TP9, TP10`) is not the Muse stream order (`TP9, AF7, AF8, TP10`); see `montages.json`.
 
-See `label_maps.json` for the full `stage_raw` → `stage_coarse` map and Head A map.
+## Optional NPZ keys
 
-## Strongly recommended metadata (manifest / index)
+| Key | Configs | Notes |
+|-----|---------|-------|
+| `stage_raw` | vigilance (`muse4_vigilance_sleep_edf`, `crown*_vigilance_hmc`) | `(N,)` **object** array of hypnogram text (`Sleep stage W`, `Sleep stage 1`, …). Load with `np.load(..., allow_pickle=True)` |
+| `stage_coarse` | vigilance | `(N,)` object: `wake` / `light` / `deep` / `rem` / `unknown` (map in `label_maps.json`) |
+| `ch_names` / `channels` | crown vigilance / attention | Channel names, same order as `X` |
+| `probe_ids` | `*_attention_ds001787` | Thought-probe index per window |
+| `task_ids`, `task_names` | `*_attention_ds003969` | Protocol block per window |
+| `montage_id` | `crown8_attention_*` | `crown8` |
 
-| Field | Notes |
-|-------|--------|
-| `subject_id` | Stable subject key (Sleep-EDF: `SC4sss`; OpenNeuro: `sub-XXX`) |
-| `recording_id` | Night/session id (`SC4001`, `sub001_ses01`, `sub001`, …) |
-| `slice_start_sec` | Absolute start of exported slice in recording time |
-| `window_start_sample` / `window_start_sec` | Per-window onset |
-| `split` | `train` \| `val` \| `test` from fixed subject JSON (policy A) |
-| `npz_sha256` | Content hash of the npz on disk |
-| `provenance` | DOI or source id (e.g. openneuro-ds001787) |
-| `license_spdx` | SPDX license id (e.g. CC0-1.0) |
+## Units and scale (not harmonised across configs)
 
-## Attention corpora extras
+| Config(s) | Stored scale | Filtering |
+|---|---|---|
+| `muse4_vigilance_sleep_edf`, `crown*_vigilance_hmc` | microvolts | FFT band-pass 1–45 Hz, then resampled to 256 Hz |
+| `muse4_attention_*`, `crown8_attention_*` | volts (raw BioSemi, no re-reference) | resample only, no band-pass |
+| `muse4_engagement_a_eng` | dimensionless z-scores, clipped at ±15 | per channel (per window for STEW); see manifest `scale_note` |
 
-| Key | Notes |
-|-----|--------|
-| `channels` | `(4,)` str — usually AF7/AF8/TP9/TP10 |
-| `probe_ids` | ds001787 probe grouping when present |
+Normalise per window/channel (or match your encoder's expected input) before mixing configs.
 
-Attention windows do **not** require `stage_raw` / `stage_coarse` (leave empty in CSV).
+## Manifests
 
-## Annotation artifacts per corpus
+See [`manifest_fields.md`](manifest_fields.md). Manifests are the authority for provenance, label rule, per-label
+counts, source license (`license_spdx`), upstream URL (`source_url`) and the window file checksum (`npz_sha256`,
+equal to the Hub LFS sha256 of the `.npz`).
 
-- `annotations/windows_index.csv` — one row per window; Sleep-EDF rows **must** include `stage_raw` and `stage_coarse`
-- `annotations/recording_manifest.json` — per-recording counts + paths + checksums
-- `annotations/checksums.json` — SHA256 of raw + windows binaries
+## Splits
 
-## Split policy
+Fixed subject-level JSON per config under `<config>/splits/` (`train_subjects.json`, `val_subjects.json`,
+`test_subjects.json`, `split_policy.json`; `muse4_engagement_a_eng` uses one `splits.json` keyed by
+`unique_person_id`). No subject appears in more than one split *within a config*. Splits are **not**
+aligned across configs; see `cross_config/vigilance_hmc_leakfree.json` before combining vigilance configs.
 
-Fixed subject JSON under `splits/` (option A). Validate with `scripts/dataset/validate_splits.py` (no subject leakage).
+## Label maps
+
+`label_maps.json`: Head A vigilance (`Sleep stage W → drowsy`, `Sleep stage 1 / N1 → hypnagogic`, other stages excluded
+from the N1-slice exports), attention (`concentration` / `mind_wandering`), engagement (`low_engagement` /
+`high_engagement`), and the `stage_raw → stage_coarse` map.

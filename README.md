@@ -8,18 +8,22 @@ This repo holds **schemas, fixed subject splits, attribution, dataset cards, and
 
 | Asset | Where |
 |-------|--------|
-| Dataset card, ATTRIBUTION, publish plan | [`docs/hf/`](docs/hf/) |
+| Root Hub card, license summary, publish plan | [`docs/hf/`](docs/hf/) ([`DATASET_CARD.md`](docs/hf/DATASET_CARD.md), [`LICENSES.md`](docs/hf/LICENSES.md)) |
+| Per-config cards + ATTRIBUTION (one template) | [`docs/hf/cards/`](docs/hf/cards/) |
+| Frozen-encoder baselines + negative results | [`baselines/`](baselines/) |
 | Window schema / montages / label maps | [`schemas/`](schemas/) (synced from training lab) |
-| Fixed subject splits (JSON) | [`splits/`](splits/) |
-| Derived window NPZs | **Hugging Face** [`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows) (license other; configs `muse4_*`, `crown8_*`, `crown2_vigilance_hmc`, `crown4_vigilance_hmc`) |
+| Fixed subject splits (JSON), cross-config leak-free vigilance list | [`splits/`](splits/) |
+| Derived window NPZs | **Hugging Face** [`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows) (mixed upstream licenses CC0-1.0 / ODC-By-1.0 / CC-BY-4.0; configs `muse4_*`, `crown8_*`, `crown2_vigilance_hmc`, `crown4_vigilance_hmc`) |
 | App head packs | [`neurofeed_heads`](https://github.com/windwerfer/neurofeed_heads) |
 | Feedback gym (in progress) | [`neurofeed/feedback_gym`](https://github.com/windwerfer/neurofeed/tree/main/feedback_gym) |
 | Training experiments | [`neurofeed_train`](https://github.com/windwerfer/neurofeed_train) (public train/eval lab) |
-| Private GPU scratch | Kaggle `muse-eeg-heads-windows` / `muse-eeg-heads-cache` / src / aeng — **private training only**; **never publish cache**; not a public redistribution path |
+| Private GPU scratch | private Kaggle datasets: **maintainer training only**; never published; not a redistribution path |
 
 ## Hugging Face dataset
 
-Name: [`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows) — see [`docs/hf/DATASET_CARD.md`](docs/hf/DATASET_CARD.md).
+Name: [`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows). The Hub README is [`docs/hf/DATASET_CARD.md`](docs/hf/DATASET_CARD.md); per-config cards are in [`docs/hf/cards/`](docs/hf/cards/).
+
+Load with `huggingface_hub` + NumPy (`uv add huggingface_hub numpy`); each config card has a split-aware snippet.
 
 Configs (derived windows only; no raw PhysioNet EDF dump):
 
@@ -30,7 +34,7 @@ Configs (derived windows only; no raw PhysioNet EDF dump):
 
 ## Never publish here or on HF
 
-Raw private caches, L-FAME (BY-NC), gated REVE base weights, LUNA, unresolved-license material, or Kaggle `muse-eeg-heads-cache` contents.
+Raw EDF/BDF recordings, private caches (including private Kaggle scratch datasets), non-commercial (BY-NC) or academic-only corpora, gated REVE base/positions weights, LUNA, unresolved-license material, credentials or private paths.
 
 ## Status
 
@@ -40,4 +44,4 @@ Public release on Hugging Face: [`windwerfer/neurofeed-eeg-windows`](https://hug
 ## License
 
 - **Packaging / docs / scripts in this repo** (schemas, fixed subject splits, attribution docs, prep/upload scripts authored here): **[Apache-2.0](LICENSE)** — see [`LICENSE`](LICENSE).
-- **Derived window NPZs on Hugging Face** ([`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows)): remain **other** / under their **source corpus licenses**. This Apache grant does **not** re-license those materials or change the HF SPDX/badge.
+- **Derived window NPZs on Hugging Face** ([`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows)): remain under their **source corpus licenses** (see [`docs/hf/LICENSES.md`](docs/hf/LICENSES.md)). This Apache grant does **not** re-license those materials or change the HF license metadata.
