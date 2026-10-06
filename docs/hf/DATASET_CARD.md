@@ -1,7 +1,7 @@
 ---
 license: other
 license_name: mixed-upstream-cc0-odc-by-cc-by
-license_link: LICENSES.md
+license_link: https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows/blob/main/LICENSES.md
 pretty_name: Neurofeed EEG Windows
 task_categories:
   - other
