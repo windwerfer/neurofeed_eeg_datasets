@@ -1,0 +1,1589 @@
+{
+ "_provenance": {
+  "source_run": "head_c_full_corpus",
+  "scrubbed": "private paths and caches removed; fields about excluded (non-open) sources removed",
+  "split_revision": "neurofeed_eeg_datasets splits/ @ c202055 (identical to HF @ 89c08ba)"
+ },
+ "step": "head_c_full_corpus_train",
+ "created_utc": "2026-09-08T13:31:01.772919+00:00",
+ "ship_candidate": false,
+ "ship_reason": "Head C on N1-slice corpus is 2-way wake/light only (deep/REM absent). Not a product 4-way stage decoder; treat as transfer probe / label sanity. test macro-F1=0.760.",
+ "task": "stage_coarse_wake_light_2way_n1slice",
+ "label_list": [
+  "wake",
+  "light"
+ ],
+ "n_subjects": 124,
+ "n_recordings": 125,
+ "train_fit": {
+  "n": 80000,
+  "accuracy": 0.753675,
+  "macro_f1": 0.7529685950156974,
+  "per_class": {
+   "wake": {
+    "precision": 0.7840546441968534,
+    "recall": 0.7002,
+    "f1": 0.7397585906341617,
+    "support": 40000.0
+   },
+   "light": {
+    "precision": 0.7291657256425312,
+    "recall": 0.80715,
+    "f1": 0.766178599397233,
+    "support": 40000.0
+   }
+  },
+  "confusion_matrix": [
+   [
+    28008,
+    11992
+   ],
+   [
+    7714,
+    32286
+   ]
+  ],
+  "label_list": [
+   "wake",
+   "light"
+  ],
+  "pred_counts": {
+   "wake": 35722,
+   "light": 44278
+  },
+  "true_counts": {
+   "wake": 40000,
+   "light": 40000
+  }
+ },
+ "val": {
+  "n": 57215,
+  "accuracy": 0.6914620291881499,
+  "macro_f1": 0.6475769208676043,
+  "per_class": {
+   "wake": {
+    "precision": 0.8712490157767344,
+    "recall": 0.692953564967296,
+    "f1": 0.7719397971707253,
+    "support": 43114.0
+   },
+   "light": {
+    "precision": 0.42252660966672484,
+    "recall": 0.6869016381816893,
+    "f1": 0.5232140445644834,
+    "support": 14101.0
+   }
+  },
+  "confusion_matrix": [
+   [
+    29876,
+    13238
+   ],
+   [
+    4415,
+    9686
+   ]
+  ],
+  "label_list": [
+   "wake",
+   "light"
+  ],
+  "pred_counts": {
+   "wake": 34291,
+   "light": 22924
+  },
+  "true_counts": {
+   "wake": 43114,
+   "light": 14101
+  }
+ },
+ "test": {
+  "n": 61736,
+  "accuracy": 0.7816994946222625,
+  "macro_f1": 0.759732696722526,
+  "per_class": {
+   "wake": {
+    "precision": 0.8972757011851772,
+    "recall": 0.7762416200793337,
+    "f1": 0.8323818762981481,
+    "support": 43109.0
+   },
+   "light": {
+    "precision": 0.6053514442353326,
+    "recall": 0.7943308101143501,
+    "f1": 0.6870835171469039,
+    "support": 18627.0
+   }
+  },
+  "confusion_matrix": [
+   [
+    33463,
+    9646
+   ],
+   [
+    3831,
+    14796
+   ]
+  ],
+  "label_list": [
+   "wake",
+   "light"
+  ],
+  "pred_counts": {
+   "wake": 37294,
+   "light": 24442
+  },
+  "true_counts": {
+   "wake": 43109,
+   "light": 18627
+  }
+ },
+ "history": [
+  {
+   "epoch": 1,
+   "loss": 0.5982511902809143,
+   "train_macro_f1": 0.7050416628340668,
+   "val_macro_f1": 0.5945091792339011,
+   "val_acc": 0.6320720090885258
+  },
+  {
+   "epoch": 2,
+   "loss": 0.5578046180725098,
+   "train_macro_f1": 0.7160915789845225,
+   "val_macro_f1": 0.5864545370200092,
+   "val_acc": 0.6196451979376038
+  },
+  {
+   "epoch": 3,
+   "loss": 0.5438510036945343,
+   "train_macro_f1": 0.7227171873790345,
+   "val_macro_f1": 0.5929730617045983,
+   "val_acc": 0.6296076203792712
+  },
+  {
+   "epoch": 4,
+   "loss": 0.5359973328590393,
+   "train_macro_f1": 0.7277853596534977,
+   "val_macro_f1": 0.6013644213926423,
+   "val_acc": 0.643502577995281
+  },
+  {
+   "epoch": 5,
+   "loss": 0.5308752497673035,
+   "train_macro_f1": 0.7316963101321783,
+   "val_macro_f1": 0.6021447931703774,
+   "val_acc": 0.634606309534213
+  },
+  {
+   "epoch": 6,
+   "loss": 0.5279313532352448,
+   "train_macro_f1": 0.7339623108327428,
+   "val_macro_f1": 0.6061048004361402,
+   "val_acc": 0.6384164991697981
+  },
+  {
+   "epoch": 7,
+   "loss": 0.5241115827560425,
+   "train_macro_f1": 0.7308407866695199,
+   "val_macro_f1": 0.5907257540244568,
+   "val_acc": 0.6128812374377348
+  },
+  {
+   "epoch": 8,
+   "loss": 0.5228861233711243,
+   "train_macro_f1": 0.7405807981654164,
+   "val_macro_f1": 0.6126897814277008,
+   "val_acc": 0.6470156427510269
+  },
+  {
+   "epoch": 9,
+   "loss": 0.5198343443393707,
+   "train_macro_f1": 0.7423882312642585,
+   "val_macro_f1": 0.6219811530765398,
+   "val_acc": 0.6610853797081185
+  },
+  {
+   "epoch": 10,
+   "loss": 0.5188707827091217,
+   "train_macro_f1": 0.74378015076545,
+   "val_macro_f1": 0.6194256789830921,
+   "val_acc": 0.6546884558245215
+  },
+  {
+   "epoch": 11,
+   "loss": 0.5176318027019501,
+   "train_macro_f1": 0.7455505348238297,
+   "val_macro_f1": 0.6237671292658918,
+   "val_acc": 0.6608931224329284
+  },
+  {
+   "epoch": 12,
+   "loss": 0.5165870316505432,
+   "train_macro_f1": 0.7445357039660964,
+   "val_macro_f1": 0.6140795002741466,
+   "val_acc": 0.6446036878440968
+  },
+  {
+   "epoch": 13,
+   "loss": 0.5160436140537262,
+   "train_macro_f1": 0.748572156450637,
+   "val_macro_f1": 0.6372639852114615,
+   "val_acc": 0.6803111072271257
+  },
+  {
+   "epoch": 14,
+   "loss": 0.5154541663646698,
+   "train_macro_f1": 0.7466633081252503,
+   "val_macro_f1": 0.619150607643927,
+   "val_acc": 0.6508782661889365
+  },
+  {
+   "epoch": 15,
+   "loss": 0.5136398413658142,
+   "train_macro_f1": 0.7486950934174867,
+   "val_macro_f1": 0.6261939416969284,
+   "val_acc": 0.6608057327623875
+  },
+  {
+   "epoch": 16,
+   "loss": 0.5135827898025512,
+   "train_macro_f1": 0.7504947480153085,
+   "val_macro_f1": 0.6342435549302836,
+   "val_acc": 0.6726033382854146
+  },
+  {
+   "epoch": 17,
+   "loss": 0.5139282536506653,
+   "train_macro_f1": 0.7519455217469584,
+   "val_macro_f1": 0.6445079348762559,
+   "val_acc": 0.6882985231145679
+  },
+  {
+   "epoch": 18,
+   "loss": 0.5127743600845337,
+   "train_macro_f1": 0.7493810688280189,
+   "val_macro_f1": 0.6249298659101421,
+   "val_acc": 0.6576422266888053
+  },
+  {
+   "epoch": 19,
+   "loss": 0.5126589008808136,
+   "train_macro_f1": 0.750444523407498,
+   "val_macro_f1": 0.6265594273041529,
+   "val_acc": 0.6595822773748143
+  },
+  {
+   "epoch": 20,
+   "loss": 0.5116635885238647,
+   "train_macro_f1": 0.7529685950156974,
+   "val_macro_f1": 0.6475769208676043,
+   "val_acc": 0.6914620291881499
+  }
+ ],
+ "best_val_macro_f1": 0.6475769208676043,
+ "splits": {
+  "train": {
+   "recordings": [
+    {
+     "recording_id": "SC4011",
+     "subject_id": "SC401",
+     "n": 5510,
+     "counts": {
+      "wake": 2576,
+      "light": 2934
+     }
+    },
+    {
+     "recording_id": "SC4021",
+     "subject_id": "SC402",
+     "n": 4974,
+     "counts": {
+      "wake": 2516,
+      "light": 2458
+     }
+    },
+    {
+     "recording_id": "SC4041",
+     "subject_id": "SC404",
+     "n": 5273,
+     "counts": {
+      "wake": 2876,
+      "light": 2397
+     }
+    },
+    {
+     "recording_id": "SC4051",
+     "subject_id": "SC405",
+     "n": 2757,
+     "counts": {
+      "wake": 2398,
+      "light": 359
+     }
+    },
+    {
+     "recording_id": "SC4061",
+     "subject_id": "SC406",
+     "n": 4069,
+     "counts": {
+      "wake": 2695,
+      "light": 1374
+     }
+    },
+    {
+     "recording_id": "SC4071",
+     "subject_id": "SC407",
+     "n": 3836,
+     "counts": {
+      "wake": 2398,
+      "light": 1438
+     }
+    },
+    {
+     "recording_id": "SC4081",
+     "subject_id": "SC408",
+     "n": 7189,
+     "counts": {
+      "wake": 6173,
+      "light": 1016
+     }
+    },
+    {
+     "recording_id": "SC4091",
+     "subject_id": "SC409",
+     "n": 2697,
+     "counts": {
+      "wake": 2398,
+      "light": 299
+     }
+    },
+    {
+     "recording_id": "SC4101",
+     "subject_id": "SC410",
+     "n": 3772,
+     "counts": {
+      "wake": 2756,
+      "light": 1016
+     }
+    },
+    {
+     "recording_id": "SC4111",
+     "subject_id": "SC411",
+     "n": 3351,
+     "counts": {
+      "wake": 2695,
+      "light": 656
+     }
+    },
+    {
+     "recording_id": "SC4121",
+     "subject_id": "SC412",
+     "n": 2636,
+     "counts": {
+      "wake": 2398,
+      "light": 238
+     }
+    },
+    {
+     "recording_id": "SC4131",
+     "subject_id": "SC413",
+     "n": 3534,
+     "counts": {
+      "wake": 2577,
+      "light": 957
+     }
+    },
+    {
+     "recording_id": "SC4141",
+     "subject_id": "SC414",
+     "n": 3411,
+     "counts": {
+      "wake": 2576,
+      "light": 835
+     }
+    },
+    {
+     "recording_id": "SC4151",
+     "subject_id": "SC415",
+     "n": 3592,
+     "counts": {
+      "wake": 2936,
+      "light": 656
+     }
+    },
+    {
+     "recording_id": "SC4161",
+     "subject_id": "SC416",
+     "n": 2934,
+     "counts": {
+      "wake": 2457,
+      "light": 477
+     }
+    },
+    {
+     "recording_id": "SC4171",
+     "subject_id": "SC417",
+     "n": 2695,
+     "counts": {
+      "wake": 2457,
+      "light": 238
+     }
+    },
+    {
+     "recording_id": "SC4181",
+     "subject_id": "SC418",
+     "n": 2817,
+     "counts": {
+      "wake": 2398,
+      "light": 419
+     }
+    },
+    {
+     "recording_id": "SC4191",
+     "subject_id": "SC419",
+     "n": 2696,
+     "counts": {
+      "wake": 2398,
+      "light": 298
+     }
+    },
+    {
+     "recording_id": "SC4201",
+     "subject_id": "SC420",
+     "n": 3413,
+     "counts": {
+      "wake": 3056,
+      "light": 357
+     }
+    },
+    {
+     "recording_id": "SC4211",
+     "subject_id": "SC421",
+     "n": 6712,
+     "counts": {
+      "wake": 6055,
+      "light": 657
+     }
+    },
+    {
+     "recording_id": "SC4221",
+     "subject_id": "SC422",
+     "n": 3893,
+     "counts": {
+      "wake": 2577,
+      "light": 1316
+     }
+    },
+    {
+     "recording_id": "SC4231",
+     "subject_id": "SC423",
+     "n": 3175,
+     "counts": {
+      "wake": 2398,
+      "light": 777
+     }
+    },
+    {
+     "recording_id": "SC4241",
+     "subject_id": "SC424",
+     "n": 6471,
+     "counts": {
+      "wake": 4855,
+      "light": 1616
+     }
+    },
+    {
+     "recording_id": "SC4251",
+     "subject_id": "SC425",
+     "n": 3055,
+     "counts": {
+      "wake": 2398,
+      "light": 657
+     }
+    },
+    {
+     "recording_id": "SC4261",
+     "subject_id": "SC426",
+     "n": 7193,
+     "counts": {
+      "wake": 6955,
+      "light": 238
+     }
+    },
+    {
+     "recording_id": "SC4271",
+     "subject_id": "SC427",
+     "n": 5389,
+     "counts": {
+      "wake": 3175,
+      "light": 2214
+     }
+    },
+    {
+     "recording_id": "SC4281",
+     "subject_id": "SC428",
+     "n": 5689,
+     "counts": {
+      "wake": 3294,
+      "light": 2395
+     }
+    },
+    {
+     "recording_id": "SC4291",
+     "subject_id": "SC429",
+     "n": 4007,
+     "counts": {
+      "wake": 2934,
+      "light": 1073
+     }
+    },
+    {
+     "recording_id": "SC4301",
+     "subject_id": "SC430",
+     "n": 3293,
+     "counts": {
+      "wake": 2697,
+      "light": 596
+     }
+    },
+    {
+     "recording_id": "SC4311",
+     "subject_id": "SC431",
+     "n": 3535,
+     "counts": {
+      "wake": 2757,
+      "light": 778
+     }
+    },
+    {
+     "recording_id": "SC4321",
+     "subject_id": "SC432",
+     "n": 6826,
+     "counts": {
+      "wake": 3233,
+      "light": 3593
+     }
+    },
+    {
+     "recording_id": "SC4331",
+     "subject_id": "SC433",
+     "n": 3594,
+     "counts": {
+      "wake": 2457,
+      "light": 1137
+     }
+    },
+    {
+     "recording_id": "SC4341",
+     "subject_id": "SC434",
+     "n": 7195,
+     "counts": {
+      "wake": 7076,
+      "light": 119
+     }
+    },
+    {
+     "recording_id": "SC4351",
+     "subject_id": "SC435",
+     "n": 5026,
+     "counts": {
+      "wake": 3713,
+      "light": 1313
+     }
+    },
+    {
+     "recording_id": "SC4362",
+     "subject_id": "SC436",
+     "n": 2756,
+     "counts": {
+      "wake": 2398,
+      "light": 358
+     }
+    },
+    {
+     "recording_id": "SC4371",
+     "subject_id": "SC437",
+     "n": 4135,
+     "counts": {
+      "wake": 2997,
+      "light": 1138
+     }
+    },
+    {
+     "recording_id": "SC4381",
+     "subject_id": "SC438",
+     "n": 7193,
+     "counts": {
+      "wake": 6715,
+      "light": 478
+     }
+    },
+    {
+     "recording_id": "SC4401",
+     "subject_id": "SC440",
+     "n": 2697,
+     "counts": {
+      "wake": 2398,
+      "light": 299
+     }
+    },
+    {
+     "recording_id": "SC4411",
+     "subject_id": "SC441",
+     "n": 3232,
+     "counts": {
+      "wake": 2457,
+      "light": 775
+     }
+    },
+    {
+     "recording_id": "SC4421",
+     "subject_id": "SC442",
+     "n": 2994,
+     "counts": {
+      "wake": 2457,
+      "light": 537
+     }
+    },
+    {
+     "recording_id": "SC4431",
+     "subject_id": "SC443",
+     "n": 3177,
+     "counts": {
+      "wake": 2398,
+      "light": 779
+     }
+    },
+    {
+     "recording_id": "SC4441",
+     "subject_id": "SC444",
+     "n": 7188,
+     "counts": {
+      "wake": 5634,
+      "light": 1554
+     }
+    },
+    {
+     "recording_id": "SC4451",
+     "subject_id": "SC445",
+     "n": 7180,
+     "counts": {
+      "wake": 3830,
+      "light": 3350
+     }
+    },
+    {
+     "recording_id": "SC4461",
+     "subject_id": "SC446",
+     "n": 2697,
+     "counts": {
+      "wake": 2398,
+      "light": 299
+     }
+    },
+    {
+     "recording_id": "SC4471",
+     "subject_id": "SC447",
+     "n": 7191,
+     "counts": {
+      "wake": 7014,
+      "light": 177
+     }
+    },
+    {
+     "recording_id": "SC4481",
+     "subject_id": "SC448",
+     "n": 7115,
+     "counts": {
+      "wake": 3888,
+      "light": 3227
+     }
+    },
+    {
+     "recording_id": "SC4491",
+     "subject_id": "SC449",
+     "n": 3053,
+     "counts": {
+      "wake": 2517,
+      "light": 536
+     }
+    },
+    {
+     "recording_id": "SC4501",
+     "subject_id": "SC450",
+     "n": 4975,
+     "counts": {
+      "wake": 2517,
+      "light": 2458
+     }
+    },
+    {
+     "recording_id": "SC4511",
+     "subject_id": "SC451",
+     "n": 5392,
+     "counts": {
+      "wake": 2636,
+      "light": 2756
+     }
+    },
+    {
+     "recording_id": "SC4522",
+     "subject_id": "SC452",
+     "n": 3234,
+     "counts": {
+      "wake": 2398,
+      "light": 836
+     }
+    },
+    {
+     "recording_id": "SC4531",
+     "subject_id": "SC453",
+     "n": 3889,
+     "counts": {
+      "wake": 2995,
+      "light": 894
+     }
+    },
+    {
+     "recording_id": "SC4541",
+     "subject_id": "SC454",
+     "n": 7006,
+     "counts": {
+      "wake": 6472,
+      "light": 534
+     }
+    },
+    {
+     "recording_id": "SC4551",
+     "subject_id": "SC455",
+     "n": 2637,
+     "counts": {
+      "wake": 2398,
+      "light": 239
+     }
+    },
+    {
+     "recording_id": "SC4561",
+     "subject_id": "SC456",
+     "n": 5509,
+     "counts": {
+      "wake": 3115,
+      "light": 2394
+     }
+    },
+    {
+     "recording_id": "SC4571",
+     "subject_id": "SC457",
+     "n": 7055,
+     "counts": {
+      "wake": 4486,
+      "light": 2569
+     }
+    },
+    {
+     "recording_id": "SC4581",
+     "subject_id": "SC458",
+     "n": 4185,
+     "counts": {
+      "wake": 3053,
+      "light": 1132
+     }
+    },
+    {
+     "recording_id": "SC4591",
+     "subject_id": "SC459",
+     "n": 5146,
+     "counts": {
+      "wake": 3293,
+      "light": 1853
+     }
+    },
+    {
+     "recording_id": "SC4601",
+     "subject_id": "SC460",
+     "n": 3053,
+     "counts": {
+      "wake": 2756,
+      "light": 297
+     }
+    },
+    {
+     "recording_id": "SC4611",
+     "subject_id": "SC461",
+     "n": 7193,
+     "counts": {
+      "wake": 7075,
+      "light": 118
+     }
+    },
+    {
+     "recording_id": "SC4621",
+     "subject_id": "SC462",
+     "n": 4913,
+     "counts": {
+      "wake": 3057,
+      "light": 1856
+     }
+    },
+    {
+     "recording_id": "SC4631",
+     "subject_id": "SC463",
+     "n": 6526,
+     "counts": {
+      "wake": 4973,
+      "light": 1553
+     }
+    },
+    {
+     "recording_id": "SC4641",
+     "subject_id": "SC464",
+     "n": 6295,
+     "counts": {
+      "wake": 5636,
+      "light": 659
+     }
+    },
+    {
+     "recording_id": "SC4651",
+     "subject_id": "SC465",
+     "n": 6775,
+     "counts": {
+      "wake": 6716,
+      "light": 59
+     }
+    },
+    {
+     "recording_id": "SC4661",
+     "subject_id": "SC466",
+     "n": 4964,
+     "counts": {
+      "wake": 3052,
+      "light": 1912
+     }
+    },
+    {
+     "recording_id": "SC4671",
+     "subject_id": "SC467",
+     "n": 3711,
+     "counts": {
+      "wake": 2517,
+      "light": 1194
+     }
+    },
+    {
+     "recording_id": "SC4701",
+     "subject_id": "SC470",
+     "n": 7068,
+     "counts": {
+      "wake": 6233,
+      "light": 835
+     }
+    },
+    {
+     "recording_id": "SC4711",
+     "subject_id": "SC471",
+     "n": 5989,
+     "counts": {
+      "wake": 4254,
+      "light": 1735
+     }
+    },
+    {
+     "recording_id": "SC4721",
+     "subject_id": "SC472",
+     "n": 5151,
+     "counts": {
+      "wake": 3175,
+      "light": 1976
+     }
+    },
+    {
+     "recording_id": "SC4731",
+     "subject_id": "SC473",
+     "n": 6468,
+     "counts": {
+      "wake": 4973,
+      "light": 1495
+     }
+    },
+    {
+     "recording_id": "SC4741",
+     "subject_id": "SC474",
+     "n": 7195,
+     "counts": {
+      "wake": 6956,
+      "light": 239
+     }
+    },
+    {
+     "recording_id": "SC4751",
+     "subject_id": "SC475",
+     "n": 5215,
+     "counts": {
+      "wake": 5156,
+      "light": 59
+     }
+    },
+    {
+     "recording_id": "SC4761",
+     "subject_id": "SC476",
+     "n": 6653,
+     "counts": {
+      "wake": 6535,
+      "light": 118
+     }
+    },
+    {
+     "recording_id": "SC4771",
+     "subject_id": "SC477",
+     "n": 6461,
+     "counts": {
+      "wake": 4250,
+      "light": 2211
+     }
+    },
+    {
+     "recording_id": "SC4801",
+     "subject_id": "SC480",
+     "n": 7173,
+     "counts": {
+      "wake": 5805,
+      "light": 1368
+     }
+    },
+    {
+     "recording_id": "SC4811",
+     "subject_id": "SC481",
+     "n": 6168,
+     "counts": {
+      "wake": 5872,
+      "light": 296
+     }
+    },
+    {
+     "recording_id": "SC4821",
+     "subject_id": "SC482",
+     "n": 7195,
+     "counts": {
+      "wake": 6896,
+      "light": 299
+     }
+    },
+    {
+     "recording_id": "SN001",
+     "subject_id": "SN001",
+     "n": 2602,
+     "counts": {
+      "wake": 754,
+      "light": 1848
+     }
+    },
+    {
+     "recording_id": "SN002",
+     "subject_id": "SN002",
+     "n": 894,
+     "counts": {
+      "wake": 477,
+      "light": 417
+     }
+    },
+    {
+     "recording_id": "SN003",
+     "subject_id": "SN003",
+     "n": 2697,
+     "counts": {
+      "wake": 2102,
+      "light": 595
+     }
+    },
+    {
+     "recording_id": "SN004",
+     "subject_id": "SN004",
+     "n": 1961,
+     "counts": {
+      "wake": 1127,
+      "light": 834
+     }
+    },
+    {
+     "recording_id": "SN005",
+     "subject_id": "SN005",
+     "n": 4002,
+     "counts": {
+      "wake": 3293,
+      "light": 709
+     }
+    },
+    {
+     "recording_id": "SN006",
+     "subject_id": "SN006",
+     "n": 2249,
+     "counts": {
+      "wake": 1181,
+      "light": 1068
+     }
+    },
+    {
+     "recording_id": "SN007",
+     "subject_id": "SN007",
+     "n": 2237,
+     "counts": {
+      "wake": 1524,
+      "light": 713
+     }
+    },
+    {
+     "recording_id": "SN008",
+     "subject_id": "SN008",
+     "n": 2141,
+     "counts": {
+      "wake": 1543,
+      "light": 598
+     }
+    },
+    {
+     "recording_id": "SN009",
+     "subject_id": "SN009",
+     "n": 4580,
+     "counts": {
+      "wake": 3686,
+      "light": 894
+     }
+    },
+    {
+     "recording_id": "SN010",
+     "subject_id": "SN010",
+     "n": 4187,
+     "counts": {
+      "wake": 3653,
+      "light": 534
+     }
+    }
+   ],
+   "counts": {
+    "wake": 304999,
+    "light": 92562
+   },
+   "n_subjects": 86,
+   "subjects": [
+    "SC401",
+    "SC402",
+    "SC404",
+    "SC405",
+    "SC406",
+    "SC407",
+    "SC408",
+    "SC409",
+    "SC410",
+    "SC411",
+    "SC412",
+    "SC413",
+    "SC414",
+    "SC415",
+    "SC416",
+    "SC417",
+    "SC418",
+    "SC419",
+    "SC420",
+    "SC421",
+    "SC422",
+    "SC423",
+    "SC424",
+    "SC425",
+    "SC426",
+    "SC427",
+    "SC428",
+    "SC429",
+    "SC430",
+    "SC431",
+    "SC432",
+    "SC433",
+    "SC434",
+    "SC435",
+    "SC436",
+    "SC437",
+    "SC438",
+    "SC440",
+    "SC441",
+    "SC442",
+    "SC443",
+    "SC444",
+    "SC445",
+    "SC446",
+    "SC447",
+    "SC448",
+    "SC449",
+    "SC450",
+    "SC451",
+    "SC452",
+    "SC453",
+    "SC454",
+    "SC455",
+    "SC456",
+    "SC457",
+    "SC458",
+    "SC459",
+    "SC460",
+    "SC461",
+    "SC462",
+    "SC463",
+    "SC464",
+    "SC465",
+    "SC466",
+    "SC467",
+    "SC470",
+    "SC471",
+    "SC472",
+    "SC473",
+    "SC474",
+    "SC475",
+    "SC476",
+    "SC477",
+    "SC480",
+    "SC481",
+    "SC482",
+    "SN001",
+    "SN002",
+    "SN003",
+    "SN004",
+    "SN005",
+    "SN006",
+    "SN007",
+    "SN008",
+    "SN009",
+    "SN010"
+   ]
+  },
+  "val": {
+   "recordings": [
+    {
+     "recording_id": "SC4031",
+     "subject_id": "SC403",
+     "n": 3529,
+     "counts": {
+      "wake": 2753,
+      "light": 776
+     }
+    },
+    {
+     "recording_id": "SN011",
+     "subject_id": "SN011",
+     "n": 1604,
+     "counts": {
+      "wake": 1128,
+      "light": 476
+     }
+    },
+    {
+     "recording_id": "SN012",
+     "subject_id": "SN012",
+     "n": 1940,
+     "counts": {
+      "wake": 1762,
+      "light": 178
+     }
+    },
+    {
+     "recording_id": "SN013",
+     "subject_id": "SN013",
+     "n": 3163,
+     "counts": {
+      "wake": 2329,
+      "light": 834
+     }
+    },
+    {
+     "recording_id": "SN015",
+     "subject_id": "SN015",
+     "n": 3052,
+     "counts": {
+      "wake": 2396,
+      "light": 656
+     }
+    },
+    {
+     "recording_id": "SN016",
+     "subject_id": "SN016",
+     "n": 709,
+     "counts": {
+      "wake": 418,
+      "light": 291
+     }
+    },
+    {
+     "recording_id": "SN017",
+     "subject_id": "SN017",
+     "n": 1187,
+     "counts": {
+      "wake": 710,
+      "light": 477
+     }
+    },
+    {
+     "recording_id": "SN018",
+     "subject_id": "SN018",
+     "n": 1853,
+     "counts": {
+      "wake": 1437,
+      "light": 416
+     }
+    },
+    {
+     "recording_id": "SN019",
+     "subject_id": "SN019",
+     "n": 6406,
+     "counts": {
+      "wake": 4455,
+      "light": 1951
+     }
+    },
+    {
+     "recording_id": "SN020",
+     "subject_id": "SN020",
+     "n": 5443,
+     "counts": {
+      "wake": 5135,
+      "light": 308
+     }
+    },
+    {
+     "recording_id": "SN021",
+     "subject_id": "SN021",
+     "n": 2435,
+     "counts": {
+      "wake": 1958,
+      "light": 477
+     }
+    },
+    {
+     "recording_id": "SN022",
+     "subject_id": "SN022",
+     "n": 3639,
+     "counts": {
+      "wake": 2933,
+      "light": 706
+     }
+    },
+    {
+     "recording_id": "SN023",
+     "subject_id": "SN023",
+     "n": 5972,
+     "counts": {
+      "wake": 5317,
+      "light": 655
+     }
+    },
+    {
+     "recording_id": "SN024",
+     "subject_id": "SN024",
+     "n": 1113,
+     "counts": {
+      "wake": 457,
+      "light": 656
+     }
+    },
+    {
+     "recording_id": "SN025",
+     "subject_id": "SN025",
+     "n": 5069,
+     "counts": {
+      "wake": 4177,
+      "light": 892
+     }
+    },
+    {
+     "recording_id": "ST7011",
+     "subject_id": "ST701",
+     "n": 4308,
+     "counts": {
+      "wake": 3295,
+      "light": 1013
+     }
+    },
+    {
+     "recording_id": "ST7021",
+     "subject_id": "ST702",
+     "n": 2564,
+     "counts": {
+      "wake": 1790,
+      "light": 774
+     }
+    },
+    {
+     "recording_id": "ST7041",
+     "subject_id": "ST704",
+     "n": 662,
+     "counts": {
+      "wake": 69,
+      "light": 593
+     }
+    },
+    {
+     "recording_id": "ST7051",
+     "subject_id": "ST705",
+     "n": 2567,
+     "counts": {
+      "wake": 595,
+      "light": 1972
+     }
+    }
+   ],
+   "counts": {
+    "wake": 43114,
+    "light": 14101
+   },
+   "n_subjects": 19,
+   "subjects": [
+    "SC403",
+    "SN011",
+    "SN012",
+    "SN013",
+    "SN015",
+    "SN016",
+    "SN017",
+    "SN018",
+    "SN019",
+    "SN020",
+    "SN021",
+    "SN022",
+    "SN023",
+    "SN024",
+    "SN025",
+    "ST701",
+    "ST702",
+    "ST704",
+    "ST705"
+   ]
+  },
+  "test": {
+   "recordings": [
+    {
+     "recording_id": "SC4001",
+     "subject_id": "SC400",
+     "n": 2755,
+     "counts": {
+      "wake": 2457,
+      "light": 298
+     }
+    },
+    {
+     "recording_id": "SC4002",
+     "subject_id": "SC400",
+     "n": 2577,
+     "counts": {
+      "wake": 2398,
+      "light": 179
+     }
+    },
+    {
+     "recording_id": "ST7061",
+     "subject_id": "ST706",
+     "n": 2593,
+     "counts": {
+      "wake": 1880,
+      "light": 713
+     }
+    },
+    {
+     "recording_id": "ST7071",
+     "subject_id": "ST707",
+     "n": 1918,
+     "counts": {
+      "wake": 1499,
+      "light": 419
+     }
+    },
+    {
+     "recording_id": "ST7081",
+     "subject_id": "ST708",
+     "n": 6819,
+     "counts": {
+      "wake": 4970,
+      "light": 1849
+     }
+    },
+    {
+     "recording_id": "ST7091",
+     "subject_id": "ST709",
+     "n": 4852,
+     "counts": {
+      "wake": 3716,
+      "light": 1136
+     }
+    },
+    {
+     "recording_id": "ST7101",
+     "subject_id": "ST710",
+     "n": 2877,
+     "counts": {
+      "wake": 2398,
+      "light": 479
+     }
+    },
+    {
+     "recording_id": "ST7111",
+     "subject_id": "ST711",
+     "n": 1551,
+     "counts": {
+      "wake": 1074,
+      "light": 477
+     }
+    },
+    {
+     "recording_id": "ST7121",
+     "subject_id": "ST712",
+     "n": 3048,
+     "counts": {
+      "wake": 2332,
+      "light": 716
+     }
+    },
+    {
+     "recording_id": "ST7131",
+     "subject_id": "ST713",
+     "n": 1258,
+     "counts": {
+      "wake": 1019,
+      "light": 239
+     }
+    },
+    {
+     "recording_id": "ST7141",
+     "subject_id": "ST714",
+     "n": 3287,
+     "counts": {
+      "wake": 1793,
+      "light": 1494
+     }
+    },
+    {
+     "recording_id": "ST7151",
+     "subject_id": "ST715",
+     "n": 3397,
+     "counts": {
+      "wake": 2563,
+      "light": 834
+     }
+    },
+    {
+     "recording_id": "ST7161",
+     "subject_id": "ST716",
+     "n": 1613,
+     "counts": {
+      "wake": 477,
+      "light": 1136
+     }
+    },
+    {
+     "recording_id": "ST7171",
+     "subject_id": "ST717",
+     "n": 6579,
+     "counts": {
+      "wake": 4247,
+      "light": 2332
+     }
+    },
+    {
+     "recording_id": "ST7181",
+     "subject_id": "ST718",
+     "n": 2210,
+     "counts": {
+      "wake": 1496,
+      "light": 714
+     }
+    },
+    {
+     "recording_id": "ST7191",
+     "subject_id": "ST719",
+     "n": 2932,
+     "counts": {
+      "wake": 2398,
+      "light": 534
+     }
+    },
+    {
+     "recording_id": "ST7201",
+     "subject_id": "ST720",
+     "n": 957,
+     "counts": {
+      "wake": 59,
+      "light": 898
+     }
+    },
+    {
+     "recording_id": "ST7211",
+     "subject_id": "ST721",
+     "n": 4192,
+     "counts": {
+      "wake": 3776,
+      "light": 416
+     }
+    },
+    {
+     "recording_id": "ST7221",
+     "subject_id": "ST722",
+     "n": 5129,
+     "counts": {
+      "wake": 2020,
+      "light": 3109
+     }
+    },
+    {
+     "recording_id": "ST7241",
+     "subject_id": "ST724",
+     "n": 1192,
+     "counts": {
+      "wake": 537,
+      "light": 655
+     }
+    }
+   ],
+   "counts": {
+    "wake": 43109,
+    "light": 18627
+   },
+   "n_subjects": 19,
+   "subjects": [
+    "SC400",
+    "ST706",
+    "ST707",
+    "ST708",
+    "ST709",
+    "ST710",
+    "ST711",
+    "ST712",
+    "ST713",
+    "ST714",
+    "ST715",
+    "ST716",
+    "ST717",
+    "ST718",
+    "ST719",
+    "ST720",
+    "ST721",
+    "ST722",
+    "ST724"
+   ]
+  }
+ },
+ "sampling": "full corpus after light QC (no per-recording cap); train undersample balanced (cap 80000)",
+ "encoder_adapter": {
+  "encoder": "CBraMod",
+  "weights_path": "CBraMod pretrained_weights.pth (Apache-2.0; https://huggingface.co/weighting666/CBraMod)",
+  "weights_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+  "native_input": "(B, C, n_patches, 200) @ 200 Hz",
+  "fed_input": "(B, C, T) @ 256.0 Hz → resample → patches",
+  "channel_policy": "keep Muse 4-ch; no fabricated 10-20 montage",
+  "pool": "mean",
+  "patch_size": 200,
+  "target_sr": 200.0,
+  "license": "Apache-2.0 (HF weighting666/CBraMod; code wjq-learning/CBraMod)"
+ },
+ "head_path": "head_c_wake_light_linear.pt",
+ "backbone_finetuned": false,
+ "montage_tags": {
+  "sleep_edf": "(ch_count=4, professional) muse4 proxy Fpz-Cz/Pz-Oz",
+  "hmc": "(ch_count=4, professional) muse4 proxy F4-M1/C4-M1/C3-M2/O2-M1"
+ },
+ "recommendation": "**Freeze vs fine-tune (user decision):**\n\n- **A-vig:** subject-holdout macro-F1=0.747 clears proxy ship bar → **prefer keep backbone frozen** for vig; fine-tune only if true-Muse cal data arrives or val/test gap suggests underfit to domain.\n- **Head C:** 2-way wake/light probe F1=0.760 on N1-slice; **do not fine-tune backbone for 4-way staging** until sleep-period deep/REM windows exist. Frozen is fine for this probe.\n- **A-med/A-eng:** skipped (known weak/confounded); no fine-tune recommendation from this run.",
+ "note_identical_to_a_vig_on_n1slice": "On this N1-slice corpus wake↔drowsy and light↔hypnagogic are 1:1; metrics should nearly match A-vig (same emb, same binary task)."
+}

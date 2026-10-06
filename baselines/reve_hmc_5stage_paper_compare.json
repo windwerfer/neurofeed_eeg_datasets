@@ -1,0 +1,603 @@
+{
+ "_provenance": {
+  "source_run": "reve_hmc_paper_compare",
+  "scrubbed": "private paths and caches removed; fields about excluded (non-open) sources removed",
+  "split_revision": "neurofeed_eeg_datasets splits/ @ c202055 (identical to HF @ 89c08ba)"
+ },
+ "step": "reve_hmc_paper_compare",
+ "completed_utc": "2026-09-08T23:09:24.365211+00:00",
+ "encoder": "REVE_frozen",
+ "pool": "mean",
+ "task": "HMC_5stage_30s",
+ "backbone_finetuned": false,
+ "n_subjects_local": 24,
+ "n_subjects_paper": 151,
+ "n_samples_paper": 137243,
+ "subjects": [
+  "SN001",
+  "SN002",
+  "SN003",
+  "SN004",
+  "SN005",
+  "SN006",
+  "SN007",
+  "SN008",
+  "SN009",
+  "SN010",
+  "SN011",
+  "SN012",
+  "SN013",
+  "SN015",
+  "SN016",
+  "SN017",
+  "SN018",
+  "SN019",
+  "SN020",
+  "SN021",
+  "SN022",
+  "SN023",
+  "SN024",
+  "SN025"
+ ],
+ "splits": {
+  "train": [
+   "SN001",
+   "SN002",
+   "SN003",
+   "SN004",
+   "SN005",
+   "SN006",
+   "SN007",
+   "SN008",
+   "SN009",
+   "SN010",
+   "SN011",
+   "SN012",
+   "SN013",
+   "SN015",
+   "SN016",
+   "SN017"
+  ],
+  "val": [
+   "SN018",
+   "SN019",
+   "SN020",
+   "SN021"
+  ],
+  "test": [
+   "SN022",
+   "SN023",
+   "SN024",
+   "SN025"
+  ]
+ },
+ "epochs_per_subject_cap": null,
+ "encode_meta": [
+  {
+   "sid": "SN001",
+   "n": 854,
+   "cached": true,
+   "label_counts": {
+    "W": 151,
+    "N1": 109,
+    "N2": 430,
+    "N3": 23,
+    "REM": 141
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN002",
+   "n": 856,
+   "cached": true,
+   "label_counts": {
+    "W": 82,
+    "N1": 67,
+    "N2": 309,
+    "N3": 224,
+    "REM": 174
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN003",
+   "n": 954,
+   "cached": true,
+   "label_counts": {
+    "W": 403,
+    "N1": 81,
+    "N2": 168,
+    "N3": 150,
+    "REM": 152
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN004",
+   "n": 1016,
+   "cached": true,
+   "label_counts": {
+    "W": 80,
+    "N1": 91,
+    "N2": 534,
+    "N3": 64,
+    "REM": 247
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN005",
+   "n": 959,
+   "cached": true,
+   "label_counts": {
+    "W": 201,
+    "N1": 141,
+    "N2": 341,
+    "N3": 149,
+    "REM": 127
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN006",
+   "n": 866,
+   "cached": true,
+   "label_counts": {
+    "W": 132,
+    "N1": 153,
+    "N2": 350,
+    "N3": 166,
+    "REM": 65
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN007",
+   "n": 1034,
+   "cached": true,
+   "label_counts": {
+    "W": 67,
+    "N1": 87,
+    "N2": 474,
+    "N3": 191,
+    "REM": 215
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN008",
+   "n": 847,
+   "cached": true,
+   "label_counts": {
+    "W": 39,
+    "N1": 73,
+    "N2": 446,
+    "N3": 87,
+    "REM": 202
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN009",
+   "n": 901,
+   "cached": true,
+   "label_counts": {
+    "W": 91,
+    "N1": 89,
+    "N2": 218,
+    "N3": 379,
+    "REM": 124
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN010",
+   "n": 924,
+   "cached": true,
+   "label_counts": {
+    "W": 239,
+    "N1": 121,
+    "N2": 327,
+    "N3": 101,
+    "REM": 136
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN011",
+   "n": 1141,
+   "cached": true,
+   "label_counts": {
+    "W": 149,
+    "N1": 250,
+    "N2": 504,
+    "N3": 201,
+    "REM": 37
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN012",
+   "n": 937,
+   "cached": true,
+   "label_counts": {
+    "W": 184,
+    "N1": 55,
+    "N2": 280,
+    "N3": 224,
+    "REM": 194
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN013",
+   "n": 1004,
+   "cached": true,
+   "label_counts": {
+    "W": 65,
+    "N1": 51,
+    "N2": 384,
+    "N3": 265,
+    "REM": 239
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN015",
+   "n": 867,
+   "cached": true,
+   "label_counts": {
+    "W": 345,
+    "N1": 127,
+    "N2": 161,
+    "N3": 132,
+    "REM": 102
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN016",
+   "n": 1088,
+   "cached": true,
+   "label_counts": {
+    "W": 24,
+    "N1": 19,
+    "N2": 423,
+    "N3": 342,
+    "REM": 280
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN017",
+   "n": 1114,
+   "cached": true,
+   "label_counts": {
+    "W": 96,
+    "N1": 134,
+    "N2": 397,
+    "N3": 284,
+    "REM": 203
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN018",
+   "n": 862,
+   "cached": true,
+   "label_counts": {
+    "W": 174,
+    "N1": 61,
+    "N2": 443,
+    "N3": 19,
+    "REM": 165
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN019",
+   "n": 840,
+   "cached": true,
+   "label_counts": {
+    "W": 342,
+    "N1": 81,
+    "N2": 188,
+    "N3": 157,
+    "REM": 72
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN020",
+   "n": 948,
+   "cached": true,
+   "label_counts": {
+    "W": 400,
+    "N1": 67,
+    "N2": 325,
+    "N3": 89,
+    "REM": 67
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN021",
+   "n": 956,
+   "cached": true,
+   "label_counts": {
+    "W": 156,
+    "N1": 112,
+    "N2": 311,
+    "N3": 191,
+    "REM": 186
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN022",
+   "n": 1002,
+   "cached": true,
+   "label_counts": {
+    "W": 115,
+    "N1": 182,
+    "N2": 436,
+    "N3": 134,
+    "REM": 135
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN023",
+   "n": 791,
+   "cached": true,
+   "label_counts": {
+    "W": 308,
+    "N1": 50,
+    "N2": 121,
+    "N3": 238,
+    "REM": 74
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN024",
+   "n": 857,
+   "cached": true,
+   "label_counts": {
+    "W": 253,
+    "N1": 96,
+    "N2": 288,
+    "N3": 150,
+    "REM": 70
+   },
+   "encode_sec": null
+  },
+  {
+   "sid": "SN025",
+   "n": 990,
+   "cached": true,
+   "label_counts": {
+    "W": 192,
+    "N1": 149,
+    "N2": 400,
+    "N3": 143,
+    "REM": 106
+   },
+   "encode_sec": null
+  }
+ ],
+ "n_epochs": {
+  "train": 15362,
+  "val": 3606,
+  "test": 3640
+ },
+ "linear_probe": {
+  "C": 0.1,
+  "val": {
+   "n": 3606,
+   "balanced_accuracy": 0.6406277213030985,
+   "cohen_kappa": 0.5629626371157385,
+   "macro_f1": 0.6266002260526158,
+   "weighted_f1": 0.6811447506152131,
+   "accuracy": 0.6661120354963949,
+   "true_counts": {
+    "W": 1072,
+    "N1": 321,
+    "N2": 1267,
+    "N3": 456,
+    "REM": 490
+   },
+   "pred_counts": {
+    "W": 795,
+    "N1": 485,
+    "N2": 1206,
+    "N3": 462,
+    "REM": 658
+   },
+   "report": {
+    "W": {
+     "precision": 0.9220125786163522,
+     "recall": 0.683768656716418,
+     "f1-score": 0.7852169255490091,
+     "support": 1072.0
+    },
+    "N1": {
+     "precision": 0.30927835051546393,
+     "recall": 0.4672897196261682,
+     "f1-score": 0.37220843672456577,
+     "support": 321.0
+    },
+    "N2": {
+     "precision": 0.7288557213930348,
+     "recall": 0.6937647987371744,
+     "f1-score": 0.710877476748888,
+     "support": 1267.0
+    },
+    "N3": {
+     "precision": 0.7424242424242424,
+     "recall": 0.7521929824561403,
+     "f1-score": 0.7472766884531591,
+     "support": 456.0
+    },
+    "REM": {
+     "precision": 0.4513677811550152,
+     "recall": 0.6061224489795919,
+     "f1-score": 0.5174216027874564,
+     "support": 490.0
+    },
+    "accuracy": 0.6661120354963949,
+    "macro avg": {
+     "precision": 0.6307877348208216,
+     "recall": 0.6406277213030985,
+     "f1-score": 0.6266002260526158,
+     "support": 3606.0
+    },
+    "weighted avg": {
+     "precision": 0.7129372437905104,
+     "recall": 0.6661120354963949,
+     "f1-score": 0.6811447506152131,
+     "support": 3606.0
+    }
+   }
+  },
+  "test": {
+   "n": 3640,
+   "balanced_accuracy": 0.648673076775995,
+   "cohen_kappa": 0.6043279187023218,
+   "macro_f1": 0.6539445278599649,
+   "weighted_f1": 0.6961135530367439,
+   "accuracy": 0.7002747252747252,
+   "true_counts": {
+    "W": 868,
+    "N1": 477,
+    "N2": 1245,
+    "N3": 665,
+    "REM": 385
+   },
+   "pred_counts": {
+    "W": 879,
+    "N1": 409,
+    "N2": 1358,
+    "N3": 648,
+    "REM": 346
+   },
+   "report": {
+    "W": {
+     "precision": 0.8111490329920364,
+     "recall": 0.8214285714285714,
+     "f1-score": 0.8162564396107613,
+     "support": 868.0
+    },
+    "N1": {
+     "precision": 0.3863080684596577,
+     "recall": 0.3312368972746331,
+     "f1-score": 0.35665914221218964,
+     "support": 477.0
+    },
+    "N2": {
+     "precision": 0.6892488954344624,
+     "recall": 0.7518072289156627,
+     "f1-score": 0.7191701882443334,
+     "support": 1245.0
+    },
+    "N3": {
+     "precision": 0.8302469135802469,
+     "recall": 0.8090225563909774,
+     "f1-score": 0.8194973343488196,
+     "support": 665.0
+    },
+    "REM": {
+     "precision": 0.5895953757225434,
+     "recall": 0.5298701298701298,
+     "f1-score": 0.5581395348837209,
+     "support": 385.0
+    },
+    "accuracy": 0.7002747252747252,
+    "macro avg": {
+     "precision": 0.6613096572377894,
+     "recall": 0.648673076775995,
+     "f1-score": 0.6539445278599649,
+     "support": 3640.0
+    },
+    "weighted avg": {
+     "precision": 0.6938378025528279,
+     "recall": 0.7002747252747252,
+     "f1-score": 0.6961135530367439,
+     "support": 3640.0
+    }
+   }
+  },
+  "coef_shape": [
+   5,
+   512
+  ],
+  "sklearn": "StandardScaler + LogisticRegression lbfgs max_iter=500"
+ },
+ "paper_reference": {
+  "REVE-Base_HMC_linear_probe_pool_bal_acc": 0.647,
+  "REVE-Base_HMC_linear_probe_nopool_bal_acc": 0.604,
+  "REVE-Base_HMC_finetune_bal_acc": 0.7401,
+  "REVE-Base_HMC_finetune_kappa": 0.6982,
+  "REVE-Base_HMC_finetune_weighted_f1": 0.7638,
+  "source": "docs/reve_team_sleep_benchmark.md / arXiv:2510.21585 Tables 4,13,14"
+ },
+ "gap_test_bal_acc_vs_paper_pool": 0.0016730767759949305,
+ "encoder_notes": {
+  "encoder": "REVE-base",
+  "model_id": "brain-bzh/reve-base (gated; user-supplied, not redistributed)",
+  "positions_id": "brain-bzh/reve-positions (gated; user-supplied, not redistributed)",
+  "emb_dim": 512,
+  "native_input": "(B, C, T) @ 200 Hz + (B, C, 3) positions",
+  "fed_input": "(B, C, T) @ 256.0 Hz → resample 200 Hz → zscore±15",
+  "window_policy": "Full-night 30 s non-overlapping epochs @ 256 Hz -> resample 200 Hz (6000 samples; patch=200 overlap=20 -> ~33 patches/ch). pool=mean.",
+  "channel_order": [
+   "F4",
+   "C4",
+   "C3",
+   "O2"
+  ],
+  "pool": "mean",
+  "patch_size": 200,
+  "patch_overlap": 20,
+  "target_sr": 200.0,
+  "gated": true,
+  "model_from_local": true,
+  "positions_from_local": true,
+  "license_note": "brain-bzh/reve-base (gated; user-supplied, not redistributed)",
+  "hmc_edf_labels": [
+   "EEG F4-M1",
+   "EEG C4-M1",
+   "EEG C3-M2",
+   "EEG O2-M1"
+  ],
+  "paper_compare": true
+ },
+ "protocol_notes": [
+  "30s @ 256 Hz full-night epochs; 5 AASM classes",
+  "Channels: EEG F4-M1/C4-M1/C3-M2/O2-M1 -> electrode names F4,C4,C3,O2 for reve-positions",
+  "Subject-wise ~70/15/15 on available local nights (paper uses full 151 + prior baseline splits)",
+  "Frozen REVE-base + mean-pool + sklearn multinomial LR (C chosen on val)",
+  "Band-pass 0.5-30 Hz before epoching (TorchEEG HMC default)"
+ ],
+ "compare_table": {
+  "ours_test": {
+   "balanced_accuracy": 0.648673076775995,
+   "cohen_kappa": 0.6043279187023218,
+   "macro_f1": 0.6539445278599649,
+   "weighted_f1": 0.6961135530367439,
+   "n": 3640
+  },
+  "paper_REVE_Base_HMC_LP_pool": {
+   "balanced_accuracy": 0.647,
+   "n_note": "full 151 subjects"
+  },
+  "paper_REVE_Base_HMC_LP_nopool": {
+   "balanced_accuracy": 0.604
+  },
+  "paper_REVE_Base_HMC_FT": {
+   "balanced_accuracy": 0.7401,
+   "cohen_kappa": 0.6982,
+   "weighted_f1": 0.7638
+  }
+ }
+}

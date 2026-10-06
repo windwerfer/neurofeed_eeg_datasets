@@ -1,0 +1,1553 @@
+{
+ "_provenance": {
+  "source_run": "head_a_vig_full_corpus",
+  "scrubbed": "private paths and caches removed; fields about excluded (non-open) sources removed",
+  "split_revision": "neurofeed_eeg_datasets splits/ @ c202055 (identical to HF @ 89c08ba)"
+ },
+ "step": "head_a_vig_full_corpus_train",
+ "created_utc": "2026-09-08T13:31:01.772919+00:00",
+ "ship_candidate": true,
+ "ship_reason": "ship_candidate for muse4-proxy Sleep-EDF/HMC vig decoder only; true Muse domain adaptation still recommended before consumer ship. Metrics clear subject-holdout bar.",
+ "task": "drowsy_vs_hypnagogic",
+ "label_list": [
+  "drowsy",
+  "hypnagogic"
+ ],
+ "n_subjects": 124,
+ "n_recordings": 125,
+ "train_fit": {
+  "n": 80000,
+  "accuracy": 0.7467125,
+  "macro_f1": 0.7458326102644209,
+  "per_class": {
+   "drowsy": {
+    "precision": 0.779616354517893,
+    "recall": 0.687875,
+    "f1": 0.7308780364708537,
+    "support": 40000.0
+   },
+   "hypnagogic": {
+    "precision": 0.7207372447267766,
+    "recall": 0.80555,
+    "f1": 0.7607871840579882,
+    "support": 40000.0
+   }
+  },
+  "confusion_matrix": [
+   [
+    27515,
+    12485
+   ],
+   [
+    7778,
+    32222
+   ]
+  ],
+  "label_list": [
+   "drowsy",
+   "hypnagogic"
+  ],
+  "pred_counts": {
+   "drowsy": 35293,
+   "hypnagogic": 44707
+  },
+  "true_counts": {
+   "drowsy": 40000,
+   "hypnagogic": 40000
+  }
+ },
+ "val": {
+  "n": 57215,
+  "accuracy": 0.6643887092545661,
+  "macro_f1": 0.6248955050314162,
+  "per_class": {
+   "drowsy": {
+    "precision": 0.8660074695401947,
+    "recall": 0.6561441759057383,
+    "f1": 0.7466086038532593,
+    "support": 43114.0
+   },
+   "hypnagogic": {
+    "precision": 0.39610574768829687,
+    "recall": 0.6895964825189703,
+    "f1": 0.5031824062095731,
+    "support": 14101.0
+   }
+  },
+  "confusion_matrix": [
+   [
+    28289,
+    14825
+   ],
+   [
+    4377,
+    9724
+   ]
+  ],
+  "label_list": [
+   "drowsy",
+   "hypnagogic"
+  ],
+  "pred_counts": {
+   "drowsy": 32666,
+   "hypnagogic": 24549
+  },
+  "true_counts": {
+   "drowsy": 43114,
+   "hypnagogic": 14101
+  }
+ },
+ "test": {
+  "n": 61736,
+  "accuracy": 0.768384735000648,
+  "macro_f1": 0.7469416004366879,
+  "per_class": {
+   "drowsy": {
+    "precision": 0.8936007432100115,
+    "recall": 0.7586350878006912,
+    "f1": 0.8206054675248097,
+    "support": 43109.0
+   },
+   "hypnagogic": {
+    "precision": 0.5860848118386507,
+    "recall": 0.7909486229666614,
+    "f1": 0.6732777333485661,
+    "support": 18627.0
+   }
+  },
+  "confusion_matrix": [
+   [
+    32704,
+    10405
+   ],
+   [
+    3894,
+    14733
+   ]
+  ],
+  "label_list": [
+   "drowsy",
+   "hypnagogic"
+  ],
+  "pred_counts": {
+   "drowsy": 36598,
+   "hypnagogic": 25138
+  },
+  "true_counts": {
+   "drowsy": 43109,
+   "hypnagogic": 18627
+  }
+ },
+ "history": [
+  {
+   "epoch": 1,
+   "loss": 0.5930996796607971,
+   "train_macro_f1": 0.7126449608954755,
+   "val_macro_f1": 0.5972208478885163,
+   "val_acc": 0.6478895394564362
+  },
+  {
+   "epoch": 2,
+   "loss": 0.5546002820014954,
+   "train_macro_f1": 0.721085228116504,
+   "val_macro_f1": 0.5904149667125862,
+   "val_acc": 0.6307961198986279
+  },
+  {
+   "epoch": 3,
+   "loss": 0.5431970415115357,
+   "train_macro_f1": 0.7232624010722855,
+   "val_macro_f1": 0.5914502435326405,
+   "val_acc": 0.6221620204491829
+  },
+  {
+   "epoch": 4,
+   "loss": 0.5363005574703217,
+   "train_macro_f1": 0.7296587096598094,
+   "val_macro_f1": 0.598766993711934,
+   "val_acc": 0.6338897142357773
+  },
+  {
+   "epoch": 5,
+   "loss": 0.532110915851593,
+   "train_macro_f1": 0.7323425642345784,
+   "val_macro_f1": 0.5998963765601933,
+   "val_acc": 0.629869789390894
+  },
+  {
+   "epoch": 6,
+   "loss": 0.5281649014472961,
+   "train_macro_f1": 0.7334157415304894,
+   "val_macro_f1": 0.5995362072330241,
+   "val_acc": 0.6267062833173119
+  },
+  {
+   "epoch": 7,
+   "loss": 0.5249891143798828,
+   "train_macro_f1": 0.7374043805718858,
+   "val_macro_f1": 0.6073395272576494,
+   "val_acc": 0.6374202569256314
+  },
+  {
+   "epoch": 8,
+   "loss": 0.5231998495578766,
+   "train_macro_f1": 0.7377282508711718,
+   "val_macro_f1": 0.6022078235569104,
+   "val_acc": 0.6291531940924583
+  },
+  {
+   "epoch": 9,
+   "loss": 0.5208718897342682,
+   "train_macro_f1": 0.7433076041063926,
+   "val_macro_f1": 0.6213542551566957,
+   "val_acc": 0.6609630341693612
+  },
+  {
+   "epoch": 10,
+   "loss": 0.5199196869850159,
+   "train_macro_f1": 0.7458326102644209,
+   "val_macro_f1": 0.6248955050314162,
+   "val_acc": 0.6643887092545661
+  },
+  {
+   "epoch": 11,
+   "loss": 0.5191794134140014,
+   "train_macro_f1": 0.7407208024744261,
+   "val_macro_f1": 0.6033399666819388,
+   "val_acc": 0.629310495499432
+  },
+  {
+   "epoch": 12,
+   "loss": 0.5175852326393128,
+   "train_macro_f1": 0.7436965109932501,
+   "val_macro_f1": 0.6079860607145415,
+   "val_acc": 0.6356025517783798
+  },
+  {
+   "epoch": 13,
+   "loss": 0.5177254234313965,
+   "train_macro_f1": 0.7426193943012913,
+   "val_macro_f1": 0.605701341577253,
+   "val_acc": 0.6317399283404701
+  },
+  {
+   "epoch": 14,
+   "loss": 0.5168998686790466,
+   "train_macro_f1": 0.7466500410640498,
+   "val_macro_f1": 0.6181855055997392,
+   "val_acc": 0.6501092370881761
+  },
+  {
+   "epoch": 15,
+   "loss": 0.5155140690803528,
+   "train_macro_f1": 0.7482077906341869,
+   "val_macro_f1": 0.6233374505515781,
+   "val_acc": 0.6579218736345364
+  }
+ ],
+ "best_val_macro_f1": 0.6248955050314162,
+ "splits": {
+  "train": {
+   "recordings": [
+    {
+     "recording_id": "SC4011",
+     "subject_id": "SC401",
+     "n": 5510,
+     "counts": {
+      "drowsy": 2576,
+      "hypnagogic": 2934
+     }
+    },
+    {
+     "recording_id": "SC4021",
+     "subject_id": "SC402",
+     "n": 4974,
+     "counts": {
+      "drowsy": 2516,
+      "hypnagogic": 2458
+     }
+    },
+    {
+     "recording_id": "SC4041",
+     "subject_id": "SC404",
+     "n": 5273,
+     "counts": {
+      "drowsy": 2876,
+      "hypnagogic": 2397
+     }
+    },
+    {
+     "recording_id": "SC4051",
+     "subject_id": "SC405",
+     "n": 2757,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 359
+     }
+    },
+    {
+     "recording_id": "SC4061",
+     "subject_id": "SC406",
+     "n": 4069,
+     "counts": {
+      "drowsy": 2695,
+      "hypnagogic": 1374
+     }
+    },
+    {
+     "recording_id": "SC4071",
+     "subject_id": "SC407",
+     "n": 3836,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 1438
+     }
+    },
+    {
+     "recording_id": "SC4081",
+     "subject_id": "SC408",
+     "n": 7189,
+     "counts": {
+      "drowsy": 6173,
+      "hypnagogic": 1016
+     }
+    },
+    {
+     "recording_id": "SC4091",
+     "subject_id": "SC409",
+     "n": 2697,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 299
+     }
+    },
+    {
+     "recording_id": "SC4101",
+     "subject_id": "SC410",
+     "n": 3772,
+     "counts": {
+      "drowsy": 2756,
+      "hypnagogic": 1016
+     }
+    },
+    {
+     "recording_id": "SC4111",
+     "subject_id": "SC411",
+     "n": 3351,
+     "counts": {
+      "drowsy": 2695,
+      "hypnagogic": 656
+     }
+    },
+    {
+     "recording_id": "SC4121",
+     "subject_id": "SC412",
+     "n": 2636,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 238
+     }
+    },
+    {
+     "recording_id": "SC4131",
+     "subject_id": "SC413",
+     "n": 3534,
+     "counts": {
+      "drowsy": 2577,
+      "hypnagogic": 957
+     }
+    },
+    {
+     "recording_id": "SC4141",
+     "subject_id": "SC414",
+     "n": 3411,
+     "counts": {
+      "drowsy": 2576,
+      "hypnagogic": 835
+     }
+    },
+    {
+     "recording_id": "SC4151",
+     "subject_id": "SC415",
+     "n": 3592,
+     "counts": {
+      "drowsy": 2936,
+      "hypnagogic": 656
+     }
+    },
+    {
+     "recording_id": "SC4161",
+     "subject_id": "SC416",
+     "n": 2934,
+     "counts": {
+      "drowsy": 2457,
+      "hypnagogic": 477
+     }
+    },
+    {
+     "recording_id": "SC4171",
+     "subject_id": "SC417",
+     "n": 2695,
+     "counts": {
+      "drowsy": 2457,
+      "hypnagogic": 238
+     }
+    },
+    {
+     "recording_id": "SC4181",
+     "subject_id": "SC418",
+     "n": 2817,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 419
+     }
+    },
+    {
+     "recording_id": "SC4191",
+     "subject_id": "SC419",
+     "n": 2696,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 298
+     }
+    },
+    {
+     "recording_id": "SC4201",
+     "subject_id": "SC420",
+     "n": 3413,
+     "counts": {
+      "drowsy": 3056,
+      "hypnagogic": 357
+     }
+    },
+    {
+     "recording_id": "SC4211",
+     "subject_id": "SC421",
+     "n": 6712,
+     "counts": {
+      "drowsy": 6055,
+      "hypnagogic": 657
+     }
+    },
+    {
+     "recording_id": "SC4221",
+     "subject_id": "SC422",
+     "n": 3893,
+     "counts": {
+      "drowsy": 2577,
+      "hypnagogic": 1316
+     }
+    },
+    {
+     "recording_id": "SC4231",
+     "subject_id": "SC423",
+     "n": 3175,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 777
+     }
+    },
+    {
+     "recording_id": "SC4241",
+     "subject_id": "SC424",
+     "n": 6471,
+     "counts": {
+      "drowsy": 4855,
+      "hypnagogic": 1616
+     }
+    },
+    {
+     "recording_id": "SC4251",
+     "subject_id": "SC425",
+     "n": 3055,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 657
+     }
+    },
+    {
+     "recording_id": "SC4261",
+     "subject_id": "SC426",
+     "n": 7193,
+     "counts": {
+      "drowsy": 6955,
+      "hypnagogic": 238
+     }
+    },
+    {
+     "recording_id": "SC4271",
+     "subject_id": "SC427",
+     "n": 5389,
+     "counts": {
+      "drowsy": 3175,
+      "hypnagogic": 2214
+     }
+    },
+    {
+     "recording_id": "SC4281",
+     "subject_id": "SC428",
+     "n": 5689,
+     "counts": {
+      "drowsy": 3294,
+      "hypnagogic": 2395
+     }
+    },
+    {
+     "recording_id": "SC4291",
+     "subject_id": "SC429",
+     "n": 4007,
+     "counts": {
+      "drowsy": 2934,
+      "hypnagogic": 1073
+     }
+    },
+    {
+     "recording_id": "SC4301",
+     "subject_id": "SC430",
+     "n": 3293,
+     "counts": {
+      "drowsy": 2697,
+      "hypnagogic": 596
+     }
+    },
+    {
+     "recording_id": "SC4311",
+     "subject_id": "SC431",
+     "n": 3535,
+     "counts": {
+      "drowsy": 2757,
+      "hypnagogic": 778
+     }
+    },
+    {
+     "recording_id": "SC4321",
+     "subject_id": "SC432",
+     "n": 6826,
+     "counts": {
+      "drowsy": 3233,
+      "hypnagogic": 3593
+     }
+    },
+    {
+     "recording_id": "SC4331",
+     "subject_id": "SC433",
+     "n": 3594,
+     "counts": {
+      "drowsy": 2457,
+      "hypnagogic": 1137
+     }
+    },
+    {
+     "recording_id": "SC4341",
+     "subject_id": "SC434",
+     "n": 7195,
+     "counts": {
+      "drowsy": 7076,
+      "hypnagogic": 119
+     }
+    },
+    {
+     "recording_id": "SC4351",
+     "subject_id": "SC435",
+     "n": 5026,
+     "counts": {
+      "drowsy": 3713,
+      "hypnagogic": 1313
+     }
+    },
+    {
+     "recording_id": "SC4362",
+     "subject_id": "SC436",
+     "n": 2756,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 358
+     }
+    },
+    {
+     "recording_id": "SC4371",
+     "subject_id": "SC437",
+     "n": 4135,
+     "counts": {
+      "drowsy": 2997,
+      "hypnagogic": 1138
+     }
+    },
+    {
+     "recording_id": "SC4381",
+     "subject_id": "SC438",
+     "n": 7193,
+     "counts": {
+      "drowsy": 6715,
+      "hypnagogic": 478
+     }
+    },
+    {
+     "recording_id": "SC4401",
+     "subject_id": "SC440",
+     "n": 2697,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 299
+     }
+    },
+    {
+     "recording_id": "SC4411",
+     "subject_id": "SC441",
+     "n": 3232,
+     "counts": {
+      "drowsy": 2457,
+      "hypnagogic": 775
+     }
+    },
+    {
+     "recording_id": "SC4421",
+     "subject_id": "SC442",
+     "n": 2994,
+     "counts": {
+      "drowsy": 2457,
+      "hypnagogic": 537
+     }
+    },
+    {
+     "recording_id": "SC4431",
+     "subject_id": "SC443",
+     "n": 3177,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 779
+     }
+    },
+    {
+     "recording_id": "SC4441",
+     "subject_id": "SC444",
+     "n": 7188,
+     "counts": {
+      "drowsy": 5634,
+      "hypnagogic": 1554
+     }
+    },
+    {
+     "recording_id": "SC4451",
+     "subject_id": "SC445",
+     "n": 7180,
+     "counts": {
+      "drowsy": 3830,
+      "hypnagogic": 3350
+     }
+    },
+    {
+     "recording_id": "SC4461",
+     "subject_id": "SC446",
+     "n": 2697,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 299
+     }
+    },
+    {
+     "recording_id": "SC4471",
+     "subject_id": "SC447",
+     "n": 7191,
+     "counts": {
+      "drowsy": 7014,
+      "hypnagogic": 177
+     }
+    },
+    {
+     "recording_id": "SC4481",
+     "subject_id": "SC448",
+     "n": 7115,
+     "counts": {
+      "drowsy": 3888,
+      "hypnagogic": 3227
+     }
+    },
+    {
+     "recording_id": "SC4491",
+     "subject_id": "SC449",
+     "n": 3053,
+     "counts": {
+      "drowsy": 2517,
+      "hypnagogic": 536
+     }
+    },
+    {
+     "recording_id": "SC4501",
+     "subject_id": "SC450",
+     "n": 4975,
+     "counts": {
+      "drowsy": 2517,
+      "hypnagogic": 2458
+     }
+    },
+    {
+     "recording_id": "SC4511",
+     "subject_id": "SC451",
+     "n": 5392,
+     "counts": {
+      "drowsy": 2636,
+      "hypnagogic": 2756
+     }
+    },
+    {
+     "recording_id": "SC4522",
+     "subject_id": "SC452",
+     "n": 3234,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 836
+     }
+    },
+    {
+     "recording_id": "SC4531",
+     "subject_id": "SC453",
+     "n": 3889,
+     "counts": {
+      "drowsy": 2995,
+      "hypnagogic": 894
+     }
+    },
+    {
+     "recording_id": "SC4541",
+     "subject_id": "SC454",
+     "n": 7006,
+     "counts": {
+      "drowsy": 6472,
+      "hypnagogic": 534
+     }
+    },
+    {
+     "recording_id": "SC4551",
+     "subject_id": "SC455",
+     "n": 2637,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 239
+     }
+    },
+    {
+     "recording_id": "SC4561",
+     "subject_id": "SC456",
+     "n": 5509,
+     "counts": {
+      "drowsy": 3115,
+      "hypnagogic": 2394
+     }
+    },
+    {
+     "recording_id": "SC4571",
+     "subject_id": "SC457",
+     "n": 7055,
+     "counts": {
+      "drowsy": 4486,
+      "hypnagogic": 2569
+     }
+    },
+    {
+     "recording_id": "SC4581",
+     "subject_id": "SC458",
+     "n": 4185,
+     "counts": {
+      "drowsy": 3053,
+      "hypnagogic": 1132
+     }
+    },
+    {
+     "recording_id": "SC4591",
+     "subject_id": "SC459",
+     "n": 5146,
+     "counts": {
+      "drowsy": 3293,
+      "hypnagogic": 1853
+     }
+    },
+    {
+     "recording_id": "SC4601",
+     "subject_id": "SC460",
+     "n": 3053,
+     "counts": {
+      "drowsy": 2756,
+      "hypnagogic": 297
+     }
+    },
+    {
+     "recording_id": "SC4611",
+     "subject_id": "SC461",
+     "n": 7193,
+     "counts": {
+      "drowsy": 7075,
+      "hypnagogic": 118
+     }
+    },
+    {
+     "recording_id": "SC4621",
+     "subject_id": "SC462",
+     "n": 4913,
+     "counts": {
+      "drowsy": 3057,
+      "hypnagogic": 1856
+     }
+    },
+    {
+     "recording_id": "SC4631",
+     "subject_id": "SC463",
+     "n": 6526,
+     "counts": {
+      "drowsy": 4973,
+      "hypnagogic": 1553
+     }
+    },
+    {
+     "recording_id": "SC4641",
+     "subject_id": "SC464",
+     "n": 6295,
+     "counts": {
+      "drowsy": 5636,
+      "hypnagogic": 659
+     }
+    },
+    {
+     "recording_id": "SC4651",
+     "subject_id": "SC465",
+     "n": 6775,
+     "counts": {
+      "drowsy": 6716,
+      "hypnagogic": 59
+     }
+    },
+    {
+     "recording_id": "SC4661",
+     "subject_id": "SC466",
+     "n": 4964,
+     "counts": {
+      "drowsy": 3052,
+      "hypnagogic": 1912
+     }
+    },
+    {
+     "recording_id": "SC4671",
+     "subject_id": "SC467",
+     "n": 3711,
+     "counts": {
+      "drowsy": 2517,
+      "hypnagogic": 1194
+     }
+    },
+    {
+     "recording_id": "SC4701",
+     "subject_id": "SC470",
+     "n": 7068,
+     "counts": {
+      "drowsy": 6233,
+      "hypnagogic": 835
+     }
+    },
+    {
+     "recording_id": "SC4711",
+     "subject_id": "SC471",
+     "n": 5989,
+     "counts": {
+      "drowsy": 4254,
+      "hypnagogic": 1735
+     }
+    },
+    {
+     "recording_id": "SC4721",
+     "subject_id": "SC472",
+     "n": 5151,
+     "counts": {
+      "drowsy": 3175,
+      "hypnagogic": 1976
+     }
+    },
+    {
+     "recording_id": "SC4731",
+     "subject_id": "SC473",
+     "n": 6468,
+     "counts": {
+      "drowsy": 4973,
+      "hypnagogic": 1495
+     }
+    },
+    {
+     "recording_id": "SC4741",
+     "subject_id": "SC474",
+     "n": 7195,
+     "counts": {
+      "drowsy": 6956,
+      "hypnagogic": 239
+     }
+    },
+    {
+     "recording_id": "SC4751",
+     "subject_id": "SC475",
+     "n": 5215,
+     "counts": {
+      "drowsy": 5156,
+      "hypnagogic": 59
+     }
+    },
+    {
+     "recording_id": "SC4761",
+     "subject_id": "SC476",
+     "n": 6653,
+     "counts": {
+      "drowsy": 6535,
+      "hypnagogic": 118
+     }
+    },
+    {
+     "recording_id": "SC4771",
+     "subject_id": "SC477",
+     "n": 6461,
+     "counts": {
+      "drowsy": 4250,
+      "hypnagogic": 2211
+     }
+    },
+    {
+     "recording_id": "SC4801",
+     "subject_id": "SC480",
+     "n": 7173,
+     "counts": {
+      "drowsy": 5805,
+      "hypnagogic": 1368
+     }
+    },
+    {
+     "recording_id": "SC4811",
+     "subject_id": "SC481",
+     "n": 6168,
+     "counts": {
+      "drowsy": 5872,
+      "hypnagogic": 296
+     }
+    },
+    {
+     "recording_id": "SC4821",
+     "subject_id": "SC482",
+     "n": 7195,
+     "counts": {
+      "drowsy": 6896,
+      "hypnagogic": 299
+     }
+    },
+    {
+     "recording_id": "SN001",
+     "subject_id": "SN001",
+     "n": 2602,
+     "counts": {
+      "drowsy": 754,
+      "hypnagogic": 1848
+     }
+    },
+    {
+     "recording_id": "SN002",
+     "subject_id": "SN002",
+     "n": 894,
+     "counts": {
+      "drowsy": 477,
+      "hypnagogic": 417
+     }
+    },
+    {
+     "recording_id": "SN003",
+     "subject_id": "SN003",
+     "n": 2697,
+     "counts": {
+      "drowsy": 2102,
+      "hypnagogic": 595
+     }
+    },
+    {
+     "recording_id": "SN004",
+     "subject_id": "SN004",
+     "n": 1961,
+     "counts": {
+      "drowsy": 1127,
+      "hypnagogic": 834
+     }
+    },
+    {
+     "recording_id": "SN005",
+     "subject_id": "SN005",
+     "n": 4002,
+     "counts": {
+      "drowsy": 3293,
+      "hypnagogic": 709
+     }
+    },
+    {
+     "recording_id": "SN006",
+     "subject_id": "SN006",
+     "n": 2249,
+     "counts": {
+      "drowsy": 1181,
+      "hypnagogic": 1068
+     }
+    },
+    {
+     "recording_id": "SN007",
+     "subject_id": "SN007",
+     "n": 2237,
+     "counts": {
+      "drowsy": 1524,
+      "hypnagogic": 713
+     }
+    },
+    {
+     "recording_id": "SN008",
+     "subject_id": "SN008",
+     "n": 2141,
+     "counts": {
+      "drowsy": 1543,
+      "hypnagogic": 598
+     }
+    },
+    {
+     "recording_id": "SN009",
+     "subject_id": "SN009",
+     "n": 4580,
+     "counts": {
+      "drowsy": 3686,
+      "hypnagogic": 894
+     }
+    },
+    {
+     "recording_id": "SN010",
+     "subject_id": "SN010",
+     "n": 4187,
+     "counts": {
+      "drowsy": 3653,
+      "hypnagogic": 534
+     }
+    }
+   ],
+   "counts": {
+    "drowsy": 304999,
+    "hypnagogic": 92562
+   },
+   "n_subjects": 86,
+   "subjects": [
+    "SC401",
+    "SC402",
+    "SC404",
+    "SC405",
+    "SC406",
+    "SC407",
+    "SC408",
+    "SC409",
+    "SC410",
+    "SC411",
+    "SC412",
+    "SC413",
+    "SC414",
+    "SC415",
+    "SC416",
+    "SC417",
+    "SC418",
+    "SC419",
+    "SC420",
+    "SC421",
+    "SC422",
+    "SC423",
+    "SC424",
+    "SC425",
+    "SC426",
+    "SC427",
+    "SC428",
+    "SC429",
+    "SC430",
+    "SC431",
+    "SC432",
+    "SC433",
+    "SC434",
+    "SC435",
+    "SC436",
+    "SC437",
+    "SC438",
+    "SC440",
+    "SC441",
+    "SC442",
+    "SC443",
+    "SC444",
+    "SC445",
+    "SC446",
+    "SC447",
+    "SC448",
+    "SC449",
+    "SC450",
+    "SC451",
+    "SC452",
+    "SC453",
+    "SC454",
+    "SC455",
+    "SC456",
+    "SC457",
+    "SC458",
+    "SC459",
+    "SC460",
+    "SC461",
+    "SC462",
+    "SC463",
+    "SC464",
+    "SC465",
+    "SC466",
+    "SC467",
+    "SC470",
+    "SC471",
+    "SC472",
+    "SC473",
+    "SC474",
+    "SC475",
+    "SC476",
+    "SC477",
+    "SC480",
+    "SC481",
+    "SC482",
+    "SN001",
+    "SN002",
+    "SN003",
+    "SN004",
+    "SN005",
+    "SN006",
+    "SN007",
+    "SN008",
+    "SN009",
+    "SN010"
+   ]
+  },
+  "val": {
+   "recordings": [
+    {
+     "recording_id": "SC4031",
+     "subject_id": "SC403",
+     "n": 3529,
+     "counts": {
+      "drowsy": 2753,
+      "hypnagogic": 776
+     }
+    },
+    {
+     "recording_id": "SN011",
+     "subject_id": "SN011",
+     "n": 1604,
+     "counts": {
+      "drowsy": 1128,
+      "hypnagogic": 476
+     }
+    },
+    {
+     "recording_id": "SN012",
+     "subject_id": "SN012",
+     "n": 1940,
+     "counts": {
+      "drowsy": 1762,
+      "hypnagogic": 178
+     }
+    },
+    {
+     "recording_id": "SN013",
+     "subject_id": "SN013",
+     "n": 3163,
+     "counts": {
+      "drowsy": 2329,
+      "hypnagogic": 834
+     }
+    },
+    {
+     "recording_id": "SN015",
+     "subject_id": "SN015",
+     "n": 3052,
+     "counts": {
+      "drowsy": 2396,
+      "hypnagogic": 656
+     }
+    },
+    {
+     "recording_id": "SN016",
+     "subject_id": "SN016",
+     "n": 709,
+     "counts": {
+      "drowsy": 418,
+      "hypnagogic": 291
+     }
+    },
+    {
+     "recording_id": "SN017",
+     "subject_id": "SN017",
+     "n": 1187,
+     "counts": {
+      "drowsy": 710,
+      "hypnagogic": 477
+     }
+    },
+    {
+     "recording_id": "SN018",
+     "subject_id": "SN018",
+     "n": 1853,
+     "counts": {
+      "drowsy": 1437,
+      "hypnagogic": 416
+     }
+    },
+    {
+     "recording_id": "SN019",
+     "subject_id": "SN019",
+     "n": 6406,
+     "counts": {
+      "drowsy": 4455,
+      "hypnagogic": 1951
+     }
+    },
+    {
+     "recording_id": "SN020",
+     "subject_id": "SN020",
+     "n": 5443,
+     "counts": {
+      "drowsy": 5135,
+      "hypnagogic": 308
+     }
+    },
+    {
+     "recording_id": "SN021",
+     "subject_id": "SN021",
+     "n": 2435,
+     "counts": {
+      "drowsy": 1958,
+      "hypnagogic": 477
+     }
+    },
+    {
+     "recording_id": "SN022",
+     "subject_id": "SN022",
+     "n": 3639,
+     "counts": {
+      "drowsy": 2933,
+      "hypnagogic": 706
+     }
+    },
+    {
+     "recording_id": "SN023",
+     "subject_id": "SN023",
+     "n": 5972,
+     "counts": {
+      "drowsy": 5317,
+      "hypnagogic": 655
+     }
+    },
+    {
+     "recording_id": "SN024",
+     "subject_id": "SN024",
+     "n": 1113,
+     "counts": {
+      "drowsy": 457,
+      "hypnagogic": 656
+     }
+    },
+    {
+     "recording_id": "SN025",
+     "subject_id": "SN025",
+     "n": 5069,
+     "counts": {
+      "drowsy": 4177,
+      "hypnagogic": 892
+     }
+    },
+    {
+     "recording_id": "ST7011",
+     "subject_id": "ST701",
+     "n": 4308,
+     "counts": {
+      "drowsy": 3295,
+      "hypnagogic": 1013
+     }
+    },
+    {
+     "recording_id": "ST7021",
+     "subject_id": "ST702",
+     "n": 2564,
+     "counts": {
+      "drowsy": 1790,
+      "hypnagogic": 774
+     }
+    },
+    {
+     "recording_id": "ST7041",
+     "subject_id": "ST704",
+     "n": 662,
+     "counts": {
+      "drowsy": 69,
+      "hypnagogic": 593
+     }
+    },
+    {
+     "recording_id": "ST7051",
+     "subject_id": "ST705",
+     "n": 2567,
+     "counts": {
+      "drowsy": 595,
+      "hypnagogic": 1972
+     }
+    }
+   ],
+   "counts": {
+    "drowsy": 43114,
+    "hypnagogic": 14101
+   },
+   "n_subjects": 19,
+   "subjects": [
+    "SC403",
+    "SN011",
+    "SN012",
+    "SN013",
+    "SN015",
+    "SN016",
+    "SN017",
+    "SN018",
+    "SN019",
+    "SN020",
+    "SN021",
+    "SN022",
+    "SN023",
+    "SN024",
+    "SN025",
+    "ST701",
+    "ST702",
+    "ST704",
+    "ST705"
+   ]
+  },
+  "test": {
+   "recordings": [
+    {
+     "recording_id": "SC4001",
+     "subject_id": "SC400",
+     "n": 2755,
+     "counts": {
+      "drowsy": 2457,
+      "hypnagogic": 298
+     }
+    },
+    {
+     "recording_id": "SC4002",
+     "subject_id": "SC400",
+     "n": 2577,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 179
+     }
+    },
+    {
+     "recording_id": "ST7061",
+     "subject_id": "ST706",
+     "n": 2593,
+     "counts": {
+      "drowsy": 1880,
+      "hypnagogic": 713
+     }
+    },
+    {
+     "recording_id": "ST7071",
+     "subject_id": "ST707",
+     "n": 1918,
+     "counts": {
+      "drowsy": 1499,
+      "hypnagogic": 419
+     }
+    },
+    {
+     "recording_id": "ST7081",
+     "subject_id": "ST708",
+     "n": 6819,
+     "counts": {
+      "drowsy": 4970,
+      "hypnagogic": 1849
+     }
+    },
+    {
+     "recording_id": "ST7091",
+     "subject_id": "ST709",
+     "n": 4852,
+     "counts": {
+      "drowsy": 3716,
+      "hypnagogic": 1136
+     }
+    },
+    {
+     "recording_id": "ST7101",
+     "subject_id": "ST710",
+     "n": 2877,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 479
+     }
+    },
+    {
+     "recording_id": "ST7111",
+     "subject_id": "ST711",
+     "n": 1551,
+     "counts": {
+      "drowsy": 1074,
+      "hypnagogic": 477
+     }
+    },
+    {
+     "recording_id": "ST7121",
+     "subject_id": "ST712",
+     "n": 3048,
+     "counts": {
+      "drowsy": 2332,
+      "hypnagogic": 716
+     }
+    },
+    {
+     "recording_id": "ST7131",
+     "subject_id": "ST713",
+     "n": 1258,
+     "counts": {
+      "drowsy": 1019,
+      "hypnagogic": 239
+     }
+    },
+    {
+     "recording_id": "ST7141",
+     "subject_id": "ST714",
+     "n": 3287,
+     "counts": {
+      "drowsy": 1793,
+      "hypnagogic": 1494
+     }
+    },
+    {
+     "recording_id": "ST7151",
+     "subject_id": "ST715",
+     "n": 3397,
+     "counts": {
+      "drowsy": 2563,
+      "hypnagogic": 834
+     }
+    },
+    {
+     "recording_id": "ST7161",
+     "subject_id": "ST716",
+     "n": 1613,
+     "counts": {
+      "drowsy": 477,
+      "hypnagogic": 1136
+     }
+    },
+    {
+     "recording_id": "ST7171",
+     "subject_id": "ST717",
+     "n": 6579,
+     "counts": {
+      "drowsy": 4247,
+      "hypnagogic": 2332
+     }
+    },
+    {
+     "recording_id": "ST7181",
+     "subject_id": "ST718",
+     "n": 2210,
+     "counts": {
+      "drowsy": 1496,
+      "hypnagogic": 714
+     }
+    },
+    {
+     "recording_id": "ST7191",
+     "subject_id": "ST719",
+     "n": 2932,
+     "counts": {
+      "drowsy": 2398,
+      "hypnagogic": 534
+     }
+    },
+    {
+     "recording_id": "ST7201",
+     "subject_id": "ST720",
+     "n": 957,
+     "counts": {
+      "drowsy": 59,
+      "hypnagogic": 898
+     }
+    },
+    {
+     "recording_id": "ST7211",
+     "subject_id": "ST721",
+     "n": 4192,
+     "counts": {
+      "drowsy": 3776,
+      "hypnagogic": 416
+     }
+    },
+    {
+     "recording_id": "ST7221",
+     "subject_id": "ST722",
+     "n": 5129,
+     "counts": {
+      "drowsy": 2020,
+      "hypnagogic": 3109
+     }
+    },
+    {
+     "recording_id": "ST7241",
+     "subject_id": "ST724",
+     "n": 1192,
+     "counts": {
+      "drowsy": 537,
+      "hypnagogic": 655
+     }
+    }
+   ],
+   "counts": {
+    "drowsy": 43109,
+    "hypnagogic": 18627
+   },
+   "n_subjects": 19,
+   "subjects": [
+    "SC400",
+    "ST706",
+    "ST707",
+    "ST708",
+    "ST709",
+    "ST710",
+    "ST711",
+    "ST712",
+    "ST713",
+    "ST714",
+    "ST715",
+    "ST716",
+    "ST717",
+    "ST718",
+    "ST719",
+    "ST720",
+    "ST721",
+    "ST722",
+    "ST724"
+   ]
+  }
+ },
+ "sampling": "full corpus after light QC (no per-recording cap); train undersample balanced (cap 80000)",
+ "encoder_adapter": {
+  "encoder": "CBraMod",
+  "weights_path": "CBraMod pretrained_weights.pth (Apache-2.0; https://huggingface.co/weighting666/CBraMod)",
+  "weights_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+  "native_input": "(B, C, n_patches, 200) @ 200 Hz",
+  "fed_input": "(B, C, T) @ 256.0 Hz → resample → patches",
+  "channel_policy": "keep Muse 4-ch; no fabricated 10-20 montage",
+  "pool": "mean",
+  "patch_size": 200,
+  "target_sr": 200.0,
+  "license": "Apache-2.0 (HF weighting666/CBraMod; code wjq-learning/CBraMod)"
+ },
+ "head_path": "head_a_vig_linear.pt",
+ "backbone_finetuned": false,
+ "montage_tags": {
+  "sleep_edf": "(ch_count=4, professional) muse4 proxy Fpz-Cz/Pz-Oz",
+  "hmc": "(ch_count=4, professional) muse4 proxy F4-M1/C4-M1/C3-M2/O2-M1"
+ },
+ "recommendation": "**Freeze vs fine-tune (user decision):**\n\n- **A-vig:** subject-holdout macro-F1=0.747 clears proxy ship bar → **prefer keep backbone frozen** for vig; fine-tune only if true-Muse cal data arrives or val/test gap suggests underfit to domain.\n- **Head C:** 2-way wake/light probe F1=0.760 on N1-slice; **do not fine-tune backbone for 4-way staging** until sleep-period deep/REM windows exist. Frozen is fine for this probe.\n- **A-med/A-eng:** skipped (known weak/confounded); no fine-tune recommendation from this run."
+}
