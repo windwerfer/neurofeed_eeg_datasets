@@ -1,0 +1,565 @@
+{
+ "_provenance": {
+  "source_run": "hmc_crown_vig_reve",
+  "scrubbed": "private paths and caches removed; fields about excluded (non-open) sources removed",
+  "split_revision": "neurofeed_eeg_datasets splits/ @ c202055 (identical to HF @ 89c08ba)"
+ },
+ "created_utc": "2026-09-23T12:28:47.440345+00:00",
+ "device": "cuda",
+ "encoder": "REVE_frozen",
+ "ship_bar": 0.6,
+ "any_ship_candidate": true,
+ "both_below_bar": false,
+ "sampling": "full after QC (per_class_cap=0); train undersample balanced (cap 80000)",
+ "per_class_cap": 0,
+ "batch_enc": 32,
+ "cbramod_ref": {
+  "crown2_strong": {
+   "val_macro_f1": 0.641,
+   "test_macro_f1": 0.67
+  },
+  "crown4_hmc": {
+   "val_macro_f1": 0.668,
+   "test_macro_f1": 0.68
+  }
+ },
+ "results": [
+  {
+   "montage": "crown2_strong",
+   "pack": "vigilance_hmc_crown2",
+   "n_channels": 2,
+   "ch_names": [
+    "C3",
+    "C4"
+   ],
+   "encoder": "REVE_frozen",
+   "emb_dim": 512,
+   "n_subjects": 151,
+   "splits": {
+    "n_subjects_ok": 151,
+    "n_train": 106,
+    "n_val": 23,
+    "n_test": 22
+   },
+   "encode_meta_n_recordings": 151,
+   "per_class_cap": 0,
+   "train_detail": {
+    "n_subjects": 106,
+    "counts": {
+     "drowsy": 234386,
+     "hypnagogic": 94227
+    }
+   },
+   "val_detail": {
+    "n_subjects": 23,
+    "counts": {
+     "drowsy": 51900,
+     "hypnagogic": 18274
+    }
+   },
+   "test_detail": {
+    "n_subjects": 22,
+    "counts": {
+     "drowsy": 37363,
+     "hypnagogic": 17159
+    }
+   },
+   "best_val_macro_f1": 0.6466494242546226,
+   "metrics": {
+    "train_fit": {
+     "n": 80000,
+     "accuracy": 0.6822125,
+     "macro_f1": 0.6787537520262699,
+     "per_class": {
+      "drowsy": {
+       "precision": 0.650897496946233,
+       "recall": 0.785975,
+       "f1": 0.712087065831644,
+       "support": 40000.0
+      },
+      "hypnagogic": {
+       "precision": 0.7299283889081675,
+       "recall": 0.57845,
+       "f1": 0.6454204382208957,
+       "support": 40000.0
+      }
+     },
+     "confusion_matrix": [
+      [
+       31439,
+       8561
+      ],
+      [
+       16862,
+       23138
+      ]
+     ],
+     "label_list": [
+      "drowsy",
+      "hypnagogic"
+     ],
+     "pred_counts": {
+      "drowsy": 48301,
+      "hypnagogic": 31699
+     },
+     "true_counts": {
+      "drowsy": 40000,
+      "hypnagogic": 40000
+     }
+    },
+    "val": {
+     "n": 70174,
+     "accuracy": 0.6976230512725511,
+     "macro_f1": 0.6466494242546226,
+     "per_class": {
+      "drowsy": {
+       "precision": 0.8414539141273621,
+       "recall": 0.7284007707129094,
+       "f1": 0.7808565792599172,
+       "support": 51900.0
+      },
+      "hypnagogic": {
+       "precision": 0.4416762387610409,
+       "recall": 0.6102112290686221,
+       "f1": 0.5124422692493279,
+       "support": 18274.0
+      }
+     },
+     "confusion_matrix": [
+      [
+       37804,
+       14096
+      ],
+      [
+       7123,
+       11151
+      ]
+     ],
+     "label_list": [
+      "drowsy",
+      "hypnagogic"
+     ],
+     "pred_counts": {
+      "drowsy": 44927,
+      "hypnagogic": 25247
+     },
+     "true_counts": {
+      "drowsy": 51900,
+      "hypnagogic": 18274
+     }
+    },
+    "test": {
+     "n": 54522,
+     "accuracy": 0.6848428157441033,
+     "macro_f1": 0.6487881296607843,
+     "per_class": {
+      "drowsy": {
+       "precision": 0.7913826960840938,
+       "recall": 0.7334528811926238,
+       "f1": 0.7613173868955843,
+       "support": 37363.0
+      },
+      "hypnagogic": {
+       "precision": 0.4993968030561978,
+       "recall": 0.5789964450142783,
+       "f1": 0.5362588724259844,
+       "support": 17159.0
+      }
+     },
+     "confusion_matrix": [
+      [
+       27404,
+       9959
+      ],
+      [
+       7224,
+       9935
+      ]
+     ],
+     "label_list": [
+      "drowsy",
+      "hypnagogic"
+     ],
+     "pred_counts": {
+      "drowsy": 34628,
+      "hypnagogic": 19894
+     },
+     "true_counts": {
+      "drowsy": 37363,
+      "hypnagogic": 17159
+     }
+    }
+   },
+   "history": [
+    {
+     "epoch": 1,
+     "loss": 0.633449494934082,
+     "train_macro_f1": 0.6829340583217631,
+     "val_macro_f1": 0.6293554507826282,
+     "val_acc": 0.6669564226066634
+    },
+    {
+     "epoch": 2,
+     "loss": 0.6009930920600891,
+     "train_macro_f1": 0.6868326216910168,
+     "val_macro_f1": 0.6240152823507039,
+     "val_acc": 0.6578789865192236
+    },
+    {
+     "epoch": 3,
+     "loss": 0.5992832864761353,
+     "train_macro_f1": 0.6787537520262699,
+     "val_macro_f1": 0.6466494242546226,
+     "val_acc": 0.6976230512725511
+    },
+    {
+     "epoch": 4,
+     "loss": 0.5996575154304504,
+     "train_macro_f1": 0.6631364778352531,
+     "val_macro_f1": 0.551727289484057,
+     "val_acc": 0.5587112035796734
+    },
+    {
+     "epoch": 5,
+     "loss": 0.5983756989479065,
+     "train_macro_f1": 0.6867115106274675,
+     "val_macro_f1": 0.6263953038778894,
+     "val_acc": 0.6585344999572491
+    },
+    {
+     "epoch": 6,
+     "loss": 0.5982974908828735,
+     "train_macro_f1": 0.6868212052732887,
+     "val_macro_f1": 0.6294584871346419,
+     "val_acc": 0.6761193604468891
+    },
+    {
+     "epoch": 7,
+     "loss": 0.5987595685958862,
+     "train_macro_f1": 0.67083850505738,
+     "val_macro_f1": 0.5644522249129825,
+     "val_acc": 0.574315273463106
+    },
+    {
+     "epoch": 8,
+     "loss": 0.5969531122207642,
+     "train_macro_f1": 0.6881654860487519,
+     "val_macro_f1": 0.6315165381726876,
+     "val_acc": 0.6721435289423433
+    }
+   ],
+   "ship_candidate": true,
+   "ship_reason": "test macro-F1 0.649 >= 0.6",
+   "ship_bar": 0.6,
+   "head_path": "head_a_vig_reve_linear.pt",
+   "cbramod_ref": {
+    "val_macro_f1": 0.641,
+    "test_macro_f1": 0.67
+   },
+   "delta_vs_cbramod_test": -0.021211870339215788,
+   "encoder_notes": {
+    "encoder": "REVE-base",
+    "model_id": "brain-bzh/reve-base (gated; user-supplied, not redistributed)",
+    "positions_id": "brain-bzh/reve-positions (gated; user-supplied, not redistributed)",
+    "emb_dim": 512,
+    "native_input": "(B, C, T) @ 200 Hz + (B, C, 3) positions",
+    "fed_input": "(B, C, T) @ 256.0 Hz → resample 200 Hz → zscore±15",
+    "window_policy": "Keep native window duration after resample (2.0 s @ 256 Hz → 400 samples @ 200 Hz; patch=200 overlap=20 → 2 patches). Not inventing 4 s/5 s from 2 s data.",
+    "channel_order": [
+     "C3",
+     "C4"
+    ],
+    "pool": "attention",
+    "patch_size": 200,
+    "patch_overlap": 20,
+    "target_sr": 200.0,
+    "gated": true,
+    "model_from_local": true,
+    "positions_from_local": true,
+    "license_note": "brain-bzh/reve-base (gated; user-supplied, not redistributed)"
+   },
+   "created_utc": "2026-09-23T12:22:45.512790+00:00"
+  },
+  {
+   "montage": "crown4_hmc",
+   "pack": "vigilance_hmc_crown4",
+   "n_channels": 4,
+   "ch_names": [
+    "C3",
+    "C4",
+    "F6",
+    "PO4"
+   ],
+   "encoder": "REVE_frozen",
+   "emb_dim": 512,
+   "n_subjects": 151,
+   "splits": {
+    "n_subjects_ok": 151,
+    "n_train": 106,
+    "n_val": 23,
+    "n_test": 22
+   },
+   "encode_meta_n_recordings": 151,
+   "per_class_cap": 0,
+   "train_detail": {
+    "n_subjects": 106,
+    "counts": {
+     "drowsy": 233261,
+     "hypnagogic": 94174
+    }
+   },
+   "val_detail": {
+    "n_subjects": 23,
+    "counts": {
+     "drowsy": 51754,
+     "hypnagogic": 18254
+    }
+   },
+   "test_detail": {
+    "n_subjects": 22,
+    "counts": {
+     "drowsy": 37045,
+     "hypnagogic": 16843
+    }
+   },
+   "best_val_macro_f1": 0.6791594857539776,
+   "metrics": {
+    "train_fit": {
+     "n": 80000,
+     "accuracy": 0.73545,
+     "macro_f1": 0.7345632181818306,
+     "per_class": {
+      "drowsy": {
+       "precision": 0.7110523485120115,
+       "recall": 0.79325,
+       "f1": 0.7499054641709209,
+       "support": 40000.0
+      },
+      "hypnagogic": {
+       "precision": 0.7662256897331524,
+       "recall": 0.67765,
+       "f1": 0.7192209721927403,
+       "support": 40000.0
+      }
+     },
+     "confusion_matrix": [
+      [
+       31730,
+       8270
+      ],
+      [
+       12894,
+       27106
+      ]
+     ],
+     "label_list": [
+      "drowsy",
+      "hypnagogic"
+     ],
+     "pred_counts": {
+      "drowsy": 44624,
+      "hypnagogic": 35376
+     },
+     "true_counts": {
+      "drowsy": 40000,
+      "hypnagogic": 40000
+     }
+    },
+    "val": {
+     "n": 70008,
+     "accuracy": 0.7261598674437207,
+     "macro_f1": 0.6791594857539776,
+     "per_class": {
+      "drowsy": {
+       "precision": 0.8616395480476814,
+       "recall": 0.7500096610889979,
+       "f1": 0.8019586169850107,
+       "support": 51754.0
+      },
+      "hypnagogic": {
+       "precision": 0.4816298729917064,
+       "recall": 0.6585405938424455,
+       "f1": 0.5563603545229444,
+       "support": 18254.0
+      }
+     },
+     "confusion_matrix": [
+      [
+       38816,
+       12938
+      ],
+      [
+       6233,
+       12021
+      ]
+     ],
+     "label_list": [
+      "drowsy",
+      "hypnagogic"
+     ],
+     "pred_counts": {
+      "drowsy": 45049,
+      "hypnagogic": 24959
+     },
+     "true_counts": {
+      "drowsy": 51754,
+      "hypnagogic": 18254
+     }
+    },
+    "test": {
+     "n": 53888,
+     "accuracy": 0.7094714964370546,
+     "macro_f1": 0.6808876615127195,
+     "per_class": {
+      "drowsy": {
+       "precision": 0.824360801916836,
+       "recall": 0.7337022540153867,
+       "f1": 0.7763939670932358,
+       "support": 37045.0
+      },
+      "hypnagogic": {
+       "precision": 0.5283740498159392,
+       "recall": 0.6561776405628451,
+       "f1": 0.5853813559322033,
+       "support": 16843.0
+      }
+     },
+     "confusion_matrix": [
+      [
+       27180,
+       9865
+      ],
+      [
+       5791,
+       11052
+      ]
+     ],
+     "label_list": [
+      "drowsy",
+      "hypnagogic"
+     ],
+     "pred_counts": {
+      "drowsy": 32971,
+      "hypnagogic": 20917
+     },
+     "true_counts": {
+      "drowsy": 37045,
+      "hypnagogic": 16843
+     }
+    }
+   },
+   "history": [
+    {
+     "epoch": 1,
+     "loss": 0.6042819321632386,
+     "train_macro_f1": 0.7277410176506784,
+     "val_macro_f1": 0.6707114657133422,
+     "val_acc": 0.7124614329790881
+    },
+    {
+     "epoch": 2,
+     "loss": 0.548842383480072,
+     "train_macro_f1": 0.7319467873563137,
+     "val_macro_f1": 0.6686323539955177,
+     "val_acc": 0.7114758313335618
+    },
+    {
+     "epoch": 3,
+     "loss": 0.546613233089447,
+     "train_macro_f1": 0.7351419206136423,
+     "val_macro_f1": 0.6674518945511059,
+     "val_acc": 0.7087904239515483
+    },
+    {
+     "epoch": 4,
+     "loss": 0.5452102809906005,
+     "train_macro_f1": 0.7345632181818306,
+     "val_macro_f1": 0.6791594857539776,
+     "val_acc": 0.7261598674437207
+    },
+    {
+     "epoch": 5,
+     "loss": 0.5472370981216431,
+     "train_macro_f1": 0.734488485761452,
+     "val_macro_f1": 0.6470804804711812,
+     "val_acc": 0.6774511484401783
+    },
+    {
+     "epoch": 6,
+     "loss": 0.5438519454956054,
+     "train_macro_f1": 0.7335296867760435,
+     "val_macro_f1": 0.6379300832504428,
+     "val_acc": 0.6650811335847332
+    },
+    {
+     "epoch": 7,
+     "loss": 0.5468633605003357,
+     "train_macro_f1": 0.7336619016433191,
+     "val_macro_f1": 0.6783808573335461,
+     "val_acc": 0.7265455376528397
+    },
+    {
+     "epoch": 8,
+     "loss": 0.543623831653595,
+     "train_macro_f1": 0.7367664943162864,
+     "val_macro_f1": 0.6637795134681581,
+     "val_acc": 0.7053479602331162
+    },
+    {
+     "epoch": 9,
+     "loss": 0.5461827913284302,
+     "train_macro_f1": 0.7370291681794936,
+     "val_macro_f1": 0.6615144063866678,
+     "val_acc": 0.7007199177236887
+    }
+   ],
+   "ship_candidate": true,
+   "ship_reason": "test macro-F1 0.681 >= 0.6",
+   "ship_bar": 0.6,
+   "head_path": "head_a_vig_reve_linear.pt",
+   "cbramod_ref": {
+    "val_macro_f1": 0.668,
+    "test_macro_f1": 0.68
+   },
+   "delta_vs_cbramod_test": 0.000887661512719462,
+   "encoder_notes": {
+    "encoder": "REVE-base",
+    "model_id": "brain-bzh/reve-base (gated; user-supplied, not redistributed)",
+    "positions_id": "brain-bzh/reve-positions (gated; user-supplied, not redistributed)",
+    "emb_dim": 512,
+    "native_input": "(B, C, T) @ 200 Hz + (B, C, 3) positions",
+    "fed_input": "(B, C, T) @ 256.0 Hz → resample 200 Hz → zscore±15",
+    "window_policy": "Keep native window duration after resample (2.0 s @ 256 Hz → 400 samples @ 200 Hz; patch=200 overlap=20 → 2 patches). Not inventing 4 s/5 s from 2 s data.",
+    "channel_order": [
+     "C3",
+     "C4",
+     "F6",
+     "PO4"
+    ],
+    "pool": "attention",
+    "patch_size": 200,
+    "patch_overlap": 20,
+    "target_sr": 200.0,
+    "gated": true,
+    "model_from_local": true,
+    "positions_from_local": true,
+    "license_note": "brain-bzh/reve-base (gated; user-supplied, not redistributed)"
+   },
+   "created_utc": "2026-09-23T12:28:47.433997+00:00"
+  }
+ ],
+ "f1": {
+  "crown2_strong": {
+   "val_macro_f1": 0.6466494242546226,
+   "test_macro_f1": 0.6487881296607843,
+   "delta_vs_cbramod_test": -0.021211870339215788,
+   "ship_candidate": true
+  },
+  "crown4_hmc": {
+   "val_macro_f1": 0.6791594857539776,
+   "test_macro_f1": 0.6808876615127195,
+   "delta_vs_cbramod_test": 0.000887661512719462,
+   "ship_candidate": true
+  }
+ }
+}

@@ -1,0 +1,491 @@
+{
+ "_provenance": {
+  "source_run": "head_a_eng_train_reve",
+  "scrubbed": "private paths and caches removed; fields about excluded (non-open) sources removed",
+  "split_revision": "neurofeed_eeg_datasets splits/ @ c202055 (identical to HF @ 89c08ba)"
+ },
+ "created_utc": "2026-09-08T14:20:42.521972+00:00",
+ "encoder": "REVE",
+ "frozen_backbone": true,
+ "chance_macro_f1": 0.5,
+ "n_unique_persons": 133,
+ "n_packs_cached": 150,
+ "split_counts": {
+  "train_persons": 93,
+  "val_persons": 20,
+  "test_persons": 20
+ },
+ "train_pool": {
+  "n": 13708,
+  "n_persons": 93,
+  "sources": {
+   "ds007169": 1920,
+   "ds007262": 1188,
+   "ds007554": 2760,
+   "eegmat": 2400,
+   "stew": 5440
+  },
+  "device_classes": {
+   "professional": 8268,
+   "hobbyist": 5440
+  },
+  "counts": {
+   "low_engagement": 6656,
+   "high_engagement": 7052
+  }
+ },
+ "val_pool": {
+  "n": 2914,
+  "n_persons": 20,
+  "sources": {
+   "ds007169": 480,
+   "ds007262": 434,
+   "ds007554": 240,
+   "eegmat": 800,
+   "stew": 960
+  },
+  "device_classes": {
+   "professional": 1954,
+   "hobbyist": 960
+  },
+  "counts": {
+   "low_engagement": 1384,
+   "high_engagement": 1530
+  }
+ },
+ "test_pool": {
+  "n": 3084,
+  "n_persons": 20,
+  "sources": {
+   "ds007169": 480,
+   "ds007262": 324,
+   "ds007554": 600,
+   "eegmat": 400,
+   "stew": 1280
+  },
+  "device_classes": {
+   "professional": 1804,
+   "hobbyist": 1280
+  },
+  "counts": {
+   "low_engagement": 1488,
+   "high_engagement": 1596
+  }
+ },
+ "train_fit": {
+  "n": 13312,
+  "accuracy": 0.6270282451923077,
+  "macro_f1": 0.6256041773129083,
+  "per_class": {
+   "low_engagement": {
+    "precision": 0.6449014567266496,
+    "recall": 0.5653545673076923,
+    "f1": 0.6025138099431591,
+    "support": 6656.0
+   },
+   "high_engagement": {
+    "precision": 0.6130801123445232,
+    "recall": 0.6887019230769231,
+    "f1": 0.6486945446826575,
+    "support": 6656.0
+   }
+  },
+  "confusion_matrix": [
+   [
+    3763,
+    2893
+   ],
+   [
+    2072,
+    4584
+   ]
+  ],
+  "label_list": [
+   "low_engagement",
+   "high_engagement"
+  ],
+  "pred_counts": {
+   "low_engagement": 5835,
+   "high_engagement": 7477
+  },
+  "true_counts": {
+   "low_engagement": 6656,
+   "high_engagement": 6656
+  },
+  "delta_vs_chance": 0.1256041773129083
+ },
+ "val": {
+  "n": 2914,
+  "accuracy": 0.6022649279341112,
+  "macro_f1": 0.6021614319486661,
+  "per_class": {
+   "low_engagement": {
+    "precision": 0.5713379835129994,
+    "recall": 0.6510115606936416,
+    "f1": 0.6085781830462682,
+    "support": 1384.0
+   },
+   "high_engagement": {
+    "precision": 0.6387434554973822,
+    "recall": 0.5581699346405229,
+    "f1": 0.5957446808510639,
+    "support": 1530.0
+   }
+  },
+  "confusion_matrix": [
+   [
+    901,
+    483
+   ],
+   [
+    676,
+    854
+   ]
+  ],
+  "label_list": [
+   "low_engagement",
+   "high_engagement"
+  ],
+  "pred_counts": {
+   "low_engagement": 1577,
+   "high_engagement": 1337
+  },
+  "true_counts": {
+   "low_engagement": 1384,
+   "high_engagement": 1530
+  },
+  "delta_vs_chance": 0.10216143194866611
+ },
+ "test": {
+  "n": 3084,
+  "accuracy": 0.5898184176394293,
+  "macro_f1": 0.5895352672603857,
+  "per_class": {
+   "low_engagement": {
+    "precision": 0.5735973597359736,
+    "recall": 0.584005376344086,
+    "f1": 0.5787545787545788,
+    "support": 1488.0
+   },
+   "high_engagement": {
+    "precision": 0.6054811982154238,
+    "recall": 0.5952380952380952,
+    "f1": 0.6003159557661927,
+    "support": 1596.0
+   }
+  },
+  "confusion_matrix": [
+   [
+    869,
+    619
+   ],
+   [
+    646,
+    950
+   ]
+  ],
+  "label_list": [
+   "low_engagement",
+   "high_engagement"
+  ],
+  "pred_counts": {
+   "low_engagement": 1515,
+   "high_engagement": 1569
+  },
+  "true_counts": {
+   "low_engagement": 1488,
+   "high_engagement": 1596
+  },
+  "delta_vs_chance": 0.08953526726038574
+ },
+ "test_by_source": {
+  "ds007169": {
+   "n": 480,
+   "accuracy": 0.5520833333333334,
+   "macro_f1": 0.5516454871293581,
+   "per_class": {
+    "low_engagement": {
+     "precision": 0.5555555555555556,
+     "recall": 0.5208333333333334,
+     "f1": 0.5376344086021506,
+     "support": 240.0
+    },
+    "high_engagement": {
+     "precision": 0.5490196078431373,
+     "recall": 0.5833333333333334,
+     "f1": 0.5656565656565657,
+     "support": 240.0
+    }
+   },
+   "confusion_matrix": [
+    [
+     125,
+     115
+    ],
+    [
+     100,
+     140
+    ]
+   ],
+   "label_list": [
+    "low_engagement",
+    "high_engagement"
+   ],
+   "pred_counts": {
+    "low_engagement": 225,
+    "high_engagement": 255
+   },
+   "true_counts": {
+    "low_engagement": 240,
+    "high_engagement": 240
+   },
+   "delta_vs_chance": 0.051645487129358125
+  },
+  "ds007262": {
+   "n": 324,
+   "accuracy": 0.558641975308642,
+   "macro_f1": 0.515188297215566,
+   "per_class": {
+    "low_engagement": {
+     "precision": 0.35294117647058826,
+     "recall": 0.3888888888888889,
+     "f1": 0.37004405286343617,
+     "support": 108.0
+    },
+    "high_engagement": {
+     "precision": 0.6780487804878049,
+     "recall": 0.6435185185185185,
+     "f1": 0.6603325415676959,
+     "support": 216.0
+    }
+   },
+   "confusion_matrix": [
+    [
+     42,
+     66
+    ],
+    [
+     77,
+     139
+    ]
+   ],
+   "label_list": [
+    "low_engagement",
+    "high_engagement"
+   ],
+   "pred_counts": {
+    "low_engagement": 119,
+    "high_engagement": 205
+   },
+   "true_counts": {
+    "low_engagement": 108,
+    "high_engagement": 216
+   },
+   "delta_vs_chance": 0.015188297215566027
+  },
+  "ds007554": {
+   "n": 600,
+   "accuracy": 0.5533333333333333,
+   "macro_f1": 0.5518944165152546,
+   "per_class": {
+    "low_engagement": {
+     "precision": 0.5601503759398496,
+     "recall": 0.49666666666666665,
+     "f1": 0.5265017667844523,
+     "support": 300.0
+    },
+    "high_engagement": {
+     "precision": 0.5479041916167665,
+     "recall": 0.61,
+     "f1": 0.5772870662460569,
+     "support": 300.0
+    }
+   },
+   "confusion_matrix": [
+    [
+     149,
+     151
+    ],
+    [
+     117,
+     183
+    ]
+   ],
+   "label_list": [
+    "low_engagement",
+    "high_engagement"
+   ],
+   "pred_counts": {
+    "low_engagement": 266,
+    "high_engagement": 334
+   },
+   "true_counts": {
+    "low_engagement": 300,
+    "high_engagement": 300
+   },
+   "delta_vs_chance": 0.051894416515254616
+  },
+  "eegmat": {
+   "n": 400,
+   "accuracy": 0.63,
+   "macro_f1": 0.590662683925213,
+   "per_class": {
+    "low_engagement": {
+     "precision": 0.5802469135802469,
+     "recall": 0.94,
+     "f1": 0.717557251908397,
+     "support": 200.0
+    },
+    "high_engagement": {
+     "precision": 0.8421052631578947,
+     "recall": 0.32,
+     "f1": 0.463768115942029,
+     "support": 200.0
+    }
+   },
+   "confusion_matrix": [
+    [
+     188,
+     12
+    ],
+    [
+     136,
+     64
+    ]
+   ],
+   "label_list": [
+    "low_engagement",
+    "high_engagement"
+   ],
+   "pred_counts": {
+    "low_engagement": 324,
+    "high_engagement": 76
+   },
+   "true_counts": {
+    "low_engagement": 200,
+    "high_engagement": 200
+   },
+   "delta_vs_chance": 0.09066268392521304
+  },
+  "stew": {
+   "n": 1280,
+   "accuracy": 0.61640625,
+   "macro_f1": 0.6155895185021398,
+   "per_class": {
+    "low_engagement": {
+     "precision": 0.6282271944922547,
+     "recall": 0.5703125,
+     "f1": 0.5978705978705979,
+     "support": 640.0
+    },
+    "high_engagement": {
+     "precision": 0.6065808297567954,
+     "recall": 0.6625,
+     "f1": 0.6333084391336817,
+     "support": 640.0
+    }
+   },
+   "confusion_matrix": [
+    [
+     365,
+     275
+    ],
+    [
+     216,
+     424
+    ]
+   ],
+   "label_list": [
+    "low_engagement",
+    "high_engagement"
+   ],
+   "pred_counts": {
+    "low_engagement": 581,
+    "high_engagement": 699
+   },
+   "true_counts": {
+    "low_engagement": 640,
+    "high_engagement": 640
+   },
+   "delta_vs_chance": 0.11558951850213983
+  }
+ },
+ "history": [
+  {
+   "epoch": 1,
+   "loss": 0.8115206922476108,
+   "train_macro_f1": 0.5618665865113952,
+   "val_macro_f1": 0.5654708477176831,
+   "val_acc": 0.573095401509952
+  },
+  {
+   "epoch": 2,
+   "loss": 0.6935460693561114,
+   "train_macro_f1": 0.5357650926730955,
+   "val_macro_f1": 0.49183872767857145,
+   "val_acc": 0.5367192862045299
+  },
+  {
+   "epoch": 3,
+   "loss": 0.6790321595393695,
+   "train_macro_f1": 0.6151194816260819,
+   "val_macro_f1": 0.578047524593516,
+   "val_acc": 0.5803019903912148
+  },
+  {
+   "epoch": 4,
+   "loss": 0.6685308768199041,
+   "train_macro_f1": 0.6186578745181988,
+   "val_macro_f1": 0.5790773062973449,
+   "val_acc": 0.5830473575840769
+  },
+  {
+   "epoch": 5,
+   "loss": 0.6676240494618049,
+   "train_macro_f1": 0.6256041773129083,
+   "val_macro_f1": 0.6021614319486661,
+   "val_acc": 0.6022649279341112
+  },
+  {
+   "epoch": 6,
+   "loss": 0.6645093583143674,
+   "train_macro_f1": 0.6267268355021645,
+   "val_macro_f1": 0.5839897800030691,
+   "val_acc": 0.5875085792724777
+  },
+  {
+   "epoch": 7,
+   "loss": 0.6622782269349465,
+   "train_macro_f1": 0.6282579796523364,
+   "val_macro_f1": 0.5808102712267224,
+   "val_acc": 0.5851063829787234
+  },
+  {
+   "epoch": 8,
+   "loss": 0.6579948319838598,
+   "train_macro_f1": 0.5948393000706038,
+   "val_macro_f1": 0.5873934898027264,
+   "val_acc": 0.5960878517501715
+  },
+  {
+   "epoch": 9,
+   "loss": 0.6641073800050296,
+   "train_macro_f1": 0.6280525286392847,
+   "val_macro_f1": 0.5956524914423296,
+   "val_acc": 0.5957446808510638
+  },
+  {
+   "epoch": 10,
+   "loss": 0.6580685766843649,
+   "train_macro_f1": 0.6203039425453662,
+   "val_macro_f1": 0.5915248261595383,
+   "val_acc": 0.5923129718599863
+  }
+ ],
+ "best_val_macro_f1": 0.6021614319486661,
+ "ship_candidate": false,
+ "ship_reason": "Overall metrics clear soft bar but cleaner randomized source (ds007262) does not independently clear 0.55 — risk that F1 is partly order/time shortcut. Residual order confounds remain on ds007169 (L1→L4), eegmat (rest→arith), and STEW (rest→SIMKAP). Domain mix: professional 10–20/32-ch + STEW Emotiv hobbyist. muse4 proxy montage — not true Muse-native.",
+ "recommendation": "**Fit vs misfit (A-eng public head):**\n\n- **MISFIT for public ship (despite F1=0.590):** metrics above chance but order/domain confounds or cleaner-source check fail honesty bar. Keep exploring; do **not** fine-tune backbone to chase confounded signal. Optional: STEW-only / ds007262-only ablations; true-Muse personal cal.\n- **Skipped:** Head B, A-med.\n- **REVE:** compare on same splits via Kaggle T4 before any fine-tune decision.\n- Test-by-source macro-F1: ds007169=0.552, ds007262=0.515, ds007554=0.552, eegmat=0.591, stew=0.616",
+ "head_path": "head_a_eng_linear.pt",
+ "weights_sha256": null
+}
