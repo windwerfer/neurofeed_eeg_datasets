@@ -7,6 +7,7 @@
 3. Publish Crown8 attention configs only as separately named research configs after shape/order QC.
 4. Publish Muse4 attention and `muse4_engagement_a_eng` as research/reproducibility data only; retain `ship_candidate: false` and the known holdout limitations.
 5. Tag an immutable dataset revision and update the card with measured sizes, feature schema, and source-specific license links.
+   *Status 2026-10-06:* `cards-v1` metadata refresh staged on HF branch `cards-v1` for review; tag `v1.0` only after merge.
 
 ## Never publish in this dataset
 
@@ -22,7 +23,7 @@
 | Location | Put here | Do not put here |
 |---|---|---|
 | Hugging Face | Versioned derived windows, labels, manifests, checksums, card, and small usage notes | Raw upstream recordings, gated weights, private cache |
-| GitHub (`muse-eeg-heads`) | Scripts, schemas, split policy, QC reports, docs, and reproducible export code | Large binaries and credentials |
+| GitHub (`neurofeed_eeg_datasets`, `neurofeed_train`) | Schemas, split JSON, cards, baselines, scripts, docs, reproducible export code | Large binaries, credentials, private paths |
 | OpenNeuro | Cite and obtain the original OpenNeuro source datasets under their records/licenses | Treating this derived dataset as an OpenNeuro mirror |
 | Kaggle | Temporary/private scratch only when access is intentional and documented | Canonical public release, gated data, or a second conflicting source of truth |
 

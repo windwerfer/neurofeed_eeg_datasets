@@ -17,6 +17,17 @@ Live counts reconciled 2026-09-18 against on-disk window packs (not the older `a
 
 **Attention:** still `ship_candidate: false` (honest holdouts historically near chance). Larger N does not by itself make a public head.
 
-Validate in the lab with `python scripts/dataset/validate_splits.py` before treating a revision as frozen for Hugging Face.
+Validate in the lab with `uv run python scripts/dataset/validate_splits.py` before treating a revision as frozen for Hugging Face.
 
 **Crown HMC vig:** HMC-only (not Sleep-EDF). Proxy montage caveats apply. Never mix with muse4 / crown8 attention packs.
+
+## Cross-config caveats
+
+- **Do not combine `vigilance_sleep_edf` (HF `muse4_vigilance_sleep_edf`) with `vigilance_hmc_crown2|4`.** The 24 HMC subjects
+  (SN001–SN025 without SN014) appear in both, and 13 of them sit in different splits. Splits are leak-free only *within* a config.
+  If you must pool configs, use [`cross_config/vigilance_hmc_leakfree.json`](cross_config/vigilance_hmc_leakfree.json): a union
+  split that puts each subject in the most held-out split it has anywhere (test > val > train), plus the list of conflicting subjects.
+  Results under the union split are not comparable to the published per-config baselines.
+- **`vigilance_sleep_edf` is cross-cohort by construction.** Subjects were assigned by sorted id, so train = 76 Sleep-EDF
+  cassette + 10 HMC, val = 14 HMC + 4 telemetry + SC403, and test = 18 Sleep-EDF telemetry (temazepam study) + SC400. Frozen as-is.
+- **Attention subject IDs collide** across ds001787 and ds003969 (`sub-001…`); key as `<dataset>/<sub>` when pooling.
