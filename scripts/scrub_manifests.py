@@ -250,7 +250,12 @@ def main() -> int:
                 bad += 1
         dst = resolve_under(out / cfg / "windows" / mf.name, root)
         dst.parent.mkdir(parents=True, exist_ok=True)
-        dst.write_text(text)
+        target = os.path.realpath(str(dst))
+        root_real = os.path.realpath(str(root))
+        if os.path.commonpath([target, root_real]) != root_real:
+            raise ValueError(f"path escapes allowed root {root}: {dst}")
+        with open(target, "w", encoding="utf-8") as fh:
+            fh.write(text)
         n += 1
     print(f"scrubbed {n} manifests; problems={bad}")
     return 1 if bad else 0
