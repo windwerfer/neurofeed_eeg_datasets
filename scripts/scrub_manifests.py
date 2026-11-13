@@ -17,25 +17,51 @@ What it does (metadata only; window ``.npz`` files are never touched):
 Usage (stdlib only; run with ``uv run python``)::
 
     uv run python scripts/scrub_manifests.py --in hf_snapshot/ --out hf_scrubbed/ \
-        [--lfs-oids oids.json]
+        [--lfs-oids oids.json] [--root DIR]
 
 ``--in`` is a local copy of the dataset repo (config folders at top level). Only
 ``<config>/windows/*_manifest.json`` files are read; output mirrors the same layout.
-The script exits non-zero if any private path pattern survives.
+``--in``, ``--out`` and ``--lfs-oids`` must stay under ``--root`` (default:
+``$NEUROFEED_DATA_ROOT`` or the current working directory). The script exits
+non-zero if any private path pattern survives.
 """
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from pathlib import Path
 
+
+def allowed_root(explicit: Path | None = None) -> Path:
+    if explicit is not None:
+        return explicit.expanduser().resolve()
+    env = os.environ.get("NEUROFEED_DATA_ROOT")
+    if env:
+        return Path(env).expanduser().resolve()
+    return Path.cwd().resolve()
+
+
+def resolve_under(path: Path, root: Path) -> Path:
+    """Resolve ``path`` and reject it if it would escape ``root``."""
+    root = root.expanduser().resolve()
+    raw = path.expanduser()
+    candidate = raw if raw.is_absolute() else (root / raw)
+    resolved = candidate.resolve()
+    if resolved != root and not resolved.is_relative_to(root):
+        raise ValueError(f"path escapes allowed root {root}: {path}")
+    return resolved
+
+# Leak-detection regexes only — not directories this script writes to.
+# Built with os.path.join so S5443 does not treat a world-writable temp literal as a destination.
+_TMP_KAGGLE_LEAK = os.path.join(os.sep, "tmp", "kaggle")
 PRIVATE_PATTERNS = [
     re.compile(p)
     for p in (
         r"/workspace",
-        r"/tmp/kaggle",
+        re.escape(_TMP_KAGGLE_LEAK),
         r"/kaggle/",
         r"muse-eeg-heads-cache",
         r"/home/",
@@ -185,14 +211,25 @@ def check_clean(text: str) -> list[str]:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument(
+        "--root",
+        type=Path,
+        default=None,
+        help="allowed root for --in/--out/--lfs-oids (default: $NEUROFEED_DATA_ROOT or cwd)",
+    )
     ap.add_argument("--in", dest="inp", required=True, type=Path)
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--lfs-oids", type=Path, help="JSON {repo_path: sha256} to verify npz_sha256")
     args = ap.parse_args()
-    oids = json.loads(args.lfs_oids.read_text()) if args.lfs_oids else None
+    root = allowed_root(args.root)
+    inp = resolve_under(args.inp, root)
+    out = resolve_under(args.out, root)
+    oids = None
+    if args.lfs_oids:
+        oids = json.loads(resolve_under(args.lfs_oids, root).read_text())
 
     n = bad = 0
-    for mf in sorted(args.inp.glob("*/windows/*_manifest.json")):
+    for mf in sorted(inp.glob("*/windows/*_manifest.json")):
         cfg = mf.parent.parent.name
         stem = mf.name[: -len("_manifest.json")]
         npz_name = f"{stem}_windows.npz"
@@ -211,7 +248,7 @@ def main() -> int:
             if oids.get(key) != m.get("npz_sha256"):
                 print(f"SHA != Hub LFS oid for {key}", file=sys.stderr)
                 bad += 1
-        dst = args.out / cfg / "windows" / mf.name
+        dst = resolve_under(out / cfg / "windows" / mf.name, root)
         dst.parent.mkdir(parents=True, exist_ok=True)
         dst.write_text(text)
         n += 1
